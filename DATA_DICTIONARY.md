@@ -1,50 +1,91 @@
 # Data Dictionary
 
-Schema for `data/candidates_2026.csv` (released as a v1.0 asset).
+Schema for `data/candidates_2026.csv`.
 
-One row = one candidate filing for the TN 2026 Legislative Assembly.
+**One row = one *matched pair*** of (major-alliance candidate × suspect
+candidate) in the same constituency whose names are similar enough to
+flag for review. A single constituency can appear in many rows if it has
+several suspect candidates; a single major candidate can appear in
+several rows if multiple suspects share a similar name.
 
-| Column                     | Type     | Nullable | Example                          | Description |
-|----------------------------|----------|----------|----------------------------------|-------------|
-| `constituency_code`        | string   | no       | `TN-015`                         | ECI constituency code. Stable across years. |
-| `constituency_name`        | string   | no       | `Perambur`                       | Official ECI constituency name (English). |
-| `constituency_name_ta`     | string   | yes      | `பெரம்பூர்`                       | Tamil name, where available from ECI. |
-| `year`                     | integer  | no       | `2026`                           | Election year this row refers to. |
-| `candidate_name`           | string   | no       | `R. Kumar`                       | Name as filed on the Form 26 affidavit. |
-| `candidate_name_normalized`| string   | no       | `r kumar`                        | Lowercased, punctuation-stripped, transliteration-collapsed. See METHODOLOGY. |
-| `party`                    | string   | yes      | `IND`                            | Party symbol shorthand. `IND` = Independent. Null if not yet declared. |
-| `alliance`                 | string   | yes      | `DMK-led`                        | Alliance grouping, or null for unaffiliated / independents. |
-| `affidavit_url`            | string   | yes      | `https://affidavit.eci.gov.in/…` | Link to the Form 26 affidavit PDF on the ECI portal. |
-| `votes_2021`               | integer  | yes      | `87421`                          | Votes received by this exact candidate in 2021 (if ran). Null if new. |
-| `rank_2021`                | integer  | yes      | `3`                              | Finishing rank in 2021 for this candidate. |
-| `margin_pct_2021`          | float    | yes      | `1.8`                            | **Constituency-level** winning margin in 2021, expressed as percentage points of the total valid votes. Same value repeats across all rows sharing a `constituency_code`. |
-| `namesake_group_id`        | string   | yes      | `NS-015-a`                       | Stable ID linking candidates grouped as namesakes. Null = not part of a namesake cluster. See METHODOLOGY for grouping rules. |
-| `namesake_group_size`      | integer  | yes      | `3`                              | Count of candidates in the same group, including this row. Denormalized for convenience. |
-| `is_primary_candidate`     | boolean  | yes      | `true`                           | Heuristic: the candidate in the group with a prior electoral history or a major-party alliance ticket. `false` for the suspected dummy filings. Null when the group has no clear primary. |
-| `notes`                    | string   | yes      | `Matched on Tamil spelling`      | Free-text notes from manual review (e.g., "transliteration variant", "same address", "withdrew on 2026-03-12"). |
-| `last_updated`             | date     | no       | `2026-04-22`                     | ISO-8601 date of last edit to this row. |
+| Column               | Type    | Nullable | Example                                        | Description |
+|----------------------|---------|----------|------------------------------------------------|-------------|
+| `constituency`       | string  | no       | `ALANDUR`                                      | Official ECI constituency name, uppercased. |
+| `major_candidate`    | string  | no       | `S.Saravanan`                                  | Candidate fielded by a major alliance (DMK/DMK-alliance, AIADMK-NDA, TVK, NTK, BJP, etc.). As filed on ECI affidavit. |
+| `major_party`        | string  | no       | `ADMK`                                         | Party of the major candidate. See "Party abbreviations" below. |
+| `major_alliance`     | string  | no       | `NDA`                                          | Alliance grouping (`INDIA`, `NDA`, `TVK`, `NTK`, etc.). |
+| `suspect_candidate`  | string  | no       | `A.Saravanan`                                  | Candidate in the same constituency whose name is similar enough to the major candidate's that it could plausibly split votes. |
+| `suspect_party`      | string  | no       | `IND`                                          | Party of the suspect. 83% of suspects are `IND` (Independents). |
+| `similarity`         | float   | no       | `1.0`                                          | Normalized match score, 0.25–1.00. Higher = closer name match. See METHODOLOGY §2. |
+| `category`           | enum    | no       | `EXACT`                                        | One of `EXACT`, `NEAR_FULL`, `WORD_MATCH`. Discrete buckets for `similarity`. See METHODOLOGY §3. |
+| `match_detail`       | string  | no       | `Identical after normalization: SARAVANAN`     | Human-readable one-line explanation of why this pair matched. |
+| `matched_words`      | string  | no       | `SARAVANAN`                                    | The specific name token(s) that triggered the match. For `WORD_MATCH`, this is the shared surname / partial; for `EXACT` it's the whole normalized name. |
+| `normalized_major`   | string  | no       | `SARAVANAN`                                    | `major_candidate` after normalization (uppercase, punctuation / single-letter initials stripped, whitespace collapsed). |
+| `normalized_suspect` | string  | no       | `SARAVANAN`                                    | Same normalization applied to `suspect_candidate`. |
 
-## Derived fields used in scripts
+## Category values
 
-`scripts/make_scatter.py` computes two per-constituency aggregates:
+| `category`   | Rows (of 329) | `similarity` range | Meaning                                                                |
+|--------------|---------------|--------------------|------------------------------------------------------------------------|
+| `EXACT`      | 77            | 1.00 exactly       | `normalized_major == normalized_suspect`. The strongest signal.        |
+| `NEAR_FULL`  | 50            | 0.86 – 0.96        | Full-name fuzzy match (edit-distance + phonetic). Catches spelling variants, e.g. `SAMPATHKUMAR` ≈ `SAMPATH KUMAR`, `RAMACHANDRAN` ≈ `RAMACHANDIRAN`. |
+| `WORD_MATCH` | 202           | 0.25 – 1.00        | At least one full name token is shared between the two names. Weakest signal — treat as leads, not findings. |
 
-| Derived                        | From                                           |
-|--------------------------------|------------------------------------------------|
-| `namesake_count_2026`          | `COUNT(*) WHERE year=2026 AND namesake_group_id IS NOT NULL` per constituency |
-| `flag`                         | `TRUE` if `margin_pct_2021 < 5` AND `namesake_count_2026 >= 2`                |
+## Party abbreviations
+
+Short forms used in `major_party` / `suspect_party`, reflecting the way
+ECI lists record party names:
+
+| Abbrev       | Party                                                     |
+|--------------|-----------------------------------------------------------|
+| `DMK`        | Dravida Munnetra Kazhagam                                 |
+| `ADMK`       | All India Anna Dravida Munnetra Kazhagam (AIADMK)         |
+| `BJP`        | Bharatiya Janata Party                                    |
+| `INC`        | Indian National Congress                                  |
+| `TVK`        | Tamilaga Vettri Kazhagam (Vijay's party)                  |
+| `NTK`        | Naam Tamilar Katchi                                       |
+| `PMK`        | Pattali Makkal Katchi                                     |
+| `DMDK`       | Desiya Murpokku Dravida Kazhagam                          |
+| `CPI`        | Communist Party of India                                  |
+| `CPM`        | Communist Party of India (Marxist)                        |
+| `IND`        | Independent (no party affiliation)                        |
+
+Suspect parties also include full-text names for smaller outfits (e.g.,
+`BAHUJAN SAMAJ PARTY`, `ALL INDIA JANANAYAKA MAKKAL KAZHAGAM`) which
+appear verbatim as the ECI returned them.
+
+## Derived quantities used in scripts
+
+`scripts/make_chart.py` computes a per-constituency aggregate:
+
+| Derived                    | From                                                           |
+|----------------------------|----------------------------------------------------------------|
+| `exact_count`              | `COUNT(*) WHERE category='EXACT'`     per constituency          |
+| `near_full_count`          | `COUNT(*) WHERE category='NEAR_FULL'` per constituency          |
+| `word_match_count`         | `COUNT(*) WHERE category='WORD_MATCH'`per constituency          |
+| `total_suspect_pairs`      | sum of the three above                                          |
 
 ## Integrity rules
 
-- Every row with a non-null `namesake_group_id` must share that ID with at
-  least one other row (minimum group size = 2).
-- `margin_pct_2021` is constant within a `(constituency_code, year)` pair.
-- `candidate_name_normalized` is deterministic — re-running the
-  normalization script on `candidate_name` must reproduce it exactly.
+- Every row has both `major_candidate` and `suspect_candidate` populated.
+  There are no orphan suspects or orphan majors in this file.
+- `similarity == 1.0` only for `EXACT` and for a minority of `WORD_MATCH`
+  cases (shared full-word token with otherwise-different names).
+- `normalized_major` and `normalized_suspect` are deterministic — re-running
+  the normalization script on `major_candidate` / `suspect_candidate`
+  reproduces them byte-for-byte.
 
 ## Sources
 
-- Candidate filings: Election Commission of India (ECI), Form 26 affidavits
-- 2021 results: ECI Form 20 booth-level tabulations, aggregated to
-  constituency level
-- Tamil names: ECI's Tamil-language portal, cross-checked with
-  state CEO disclosures
+- Candidate filings: Election Commission of India, Form 26 affidavits
+  (public, accessible via the ECI affidavit portal).
+- Alliance groupings: cross-checked against published pre-poll alliance
+  announcements as of the CSV's `last_updated` date.
+
+## Column pressure & versioning
+
+The file is intentionally "wide-and-descriptive" rather than normalized.
+Each row is self-contained so a reader looking at a single line can
+understand the match without joining to another table. A normalized
+representation (separate `candidates`, `match_pairs` tables) may ship
+alongside in a future release — open an Issue if that would be useful.
