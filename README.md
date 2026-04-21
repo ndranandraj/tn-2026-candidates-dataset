@@ -1,57 +1,50 @@
 # TN 2026 Candidates — Open Dataset
 
-Candidate-level data backing the investigation of suspected **dummy / namesake
-candidates** in the Tamil Nadu 2026 Legislative Assembly election.
+Public dataset of suspected **namesake / dummy candidate** filings for
+the Tamil Nadu 2026 Legislative Assembly election.
 
 - Blog write-up: https://ndranandraj.com/posts/tn-2026-dummy-candidates/
-- License: **CC-BY-4.0** — use it, remix it, just credit the source.
+- License: **CC-BY-4.0** — use it, remix it, credit the source.
 - Maintainer: Anand Raj ([@ndranandraj](https://github.com/ndranandraj))
 
+## What's in the file
+
+`data/candidates_2026.csv` — 329 rows across 144 constituencies.
+
+Each row is **one pair**: a major-alliance candidate and a same-constituency
+suspect candidate whose name is similar enough to flag. The file captures
+three tiers of similarity:
+
+| Match tier   | Pairs | What it means                                      |
+|--------------|-------|----------------------------------------------------|
+| `EXACT`      |  77   | Identical name after normalization                 |
+| `NEAR_FULL`  |  50   | Fuzzy full-name match (similarity 0.86–0.96)       |
+| `WORD_MATCH` | 202   | Shared name token (treat as leads, not findings)   |
+
+**83 % of all suspects are Independents.** Major candidates span every
+major alliance — DMK, ADMK/NDA, TVK, NTK, BJP, INC, and smaller parties.
+
 > **⚠️ Read `METHODOLOGY.md` before drawing conclusions.**
-> A namesake candidate is not automatically a dummy candidate. The dataset
-> identifies *patterns consistent with vote-splitting tactics* — it does not
-> prove intent. Local reporting, affidavits, and court records are the only way
-> to make individual determinations.
+> A namesake filing is not automatically a dummy candidacy. The dataset
+> documents patterns consistent with vote-splitting tactics — it does
+> not prove intent in any specific case. Local reporting, affidavit
+> cross-checks, and court records are the only way to settle individual
+> claims.
 
----
-
-## What's in here
+## Repository layout
 
 ```
 .
 ├── README.md                   ← you are here
-├── LICENSE                     ← CC-BY-4.0 full text
-├── DATA_DICTIONARY.md          ← column definitions, types, sample values
-├── METHODOLOGY.md              ← how namesakes were grouped; selection criteria
+├── LICENSE                     ← CC-BY-4.0 notice
+├── DATA_DICTIONARY.md          ← column-by-column schema
+├── METHODOLOGY.md              ← how pairs were produced
 ├── data/
-│   └── candidates_template.csv ← schema + a few illustrative rows
+│   └── candidates_2026.csv     ← the dataset
 └── scripts/
-    └── make_scatter.py         ← builds the 2021-margin × namesake-count plot
+    ├── make_chart.py           ← top-constituencies chart
+    └── requirements.txt        ← matplotlib + pandas
 ```
-
-> The real dataset CSV is published as a versioned release asset on GitHub
-> (see **Releases → v1.0**). The `data/` folder in `main` carries only the
-> schema template so contributors can validate their pipelines.
-
----
-
-## Why this exists
-
-Every election cycle in Tamil Nadu, unusually close 2021 constituencies see
-multiple candidates filed under near-identical names in the next cycle. The
-pattern is old, suspected, and — until now — not published in a form that
-journalists, researchers, or citizens can audit line-by-line.
-
-This repository does three things:
-
-1. **Publishes the raw candidate list** (constituency, name, party, 2026
-   filing status, + 2021 result context).
-2. **Documents the grouping logic** so you can reproduce, challenge, or
-   extend the namesake detection.
-3. **Provides plotting scripts** so the charts in the blog post are
-   reproducible.
-
----
 
 ## Quickstart
 
@@ -59,58 +52,46 @@ This repository does three things:
 git clone https://github.com/ndranandraj/tn-2026-candidates-dataset
 cd tn-2026-candidates-dataset
 
-# Grab the real data (not checked into main; see Releases)
-curl -LO https://github.com/ndranandraj/tn-2026-candidates-dataset/releases/download/v1.0/candidates_2026.csv
-mv candidates_2026.csv data/
+# Read the data in Python
+python3 -c "import pandas as pd; print(pd.read_csv('data/candidates_2026.csv').head())"
 
-# Plot
+# Reproduce the chart
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r scripts/requirements.txt
-python scripts/make_scatter.py data/candidates_2026.csv out/scatter.png
+python scripts/make_chart.py data/candidates_2026.csv out/chart.png
 ```
-
----
 
 ## How to cite
 
 > Raj, Anand. *TN 2026 Candidates — Open Dataset* (v1.0). 2026. CC-BY-4.0.
 > https://github.com/ndranandraj/tn-2026-candidates-dataset
 
-BibTeX is in `CITATION.cff` (added in v1.0 release).
-
----
-
 ## Contributing
 
-Corrections are welcome and encouraged. Two kinds of issues are especially
-useful:
+Corrections are encouraged. Two kinds of Issues are especially useful:
 
-- **False positives** — two candidates grouped as namesakes who are clearly
-  different individuals (different affidavits, distinct addresses, no
-  naming-overlap intent). Please link the evidence.
-- **False negatives** — namesake groupings the script missed (e.g. because of
-  a transliteration variant not covered by the normalization rules).
+- **False positives** — two candidates grouped together who are clearly
+  different individuals. Please link the affidavit URLs.
+- **False negatives** — suspect candidates the pipeline missed
+  (typically a Tamil-Latin transliteration variant). Include both
+  spellings.
 
-Please file an Issue rather than a PR first — the canonical dataset lives in
-release assets, not in `main`, and we want to keep an audit trail of every
-edit with a source link.
+Please open an Issue rather than a PR so every correction has an
+audit trail.
 
 ### What this dataset is **not**
 
-- Not a list of "dummy" candidates. That word appears in the blog post as
-  shorthand for a pattern. Only a court, election commission, or investigative
-  reporter can establish intent in a specific case.
-- Not a prediction. No forecasting models are fit here.
-- Not political commentary. Every party that has fielded a namesake candidate
-  shows up in the data.
-
----
+- Not a list of "dummy" candidates. Only a court, election commission,
+  or investigative reporter can establish intent in a specific case.
+- Not political commentary. Every major alliance appears among the
+  majors. The file exposes a structural pattern, not a partisan claim.
+- Not a prediction. No forecasting models are fit on this data.
 
 ## Releases
 
-| Version | Date       | Changes                                             |
-|---------|------------|-----------------------------------------------------|
-| v1.0    | 2026-04-24 | Initial public release of candidates_2026.csv      |
+| Version | Date       | Changes                                                      |
+|---------|------------|--------------------------------------------------------------|
+| v1.0    | 2026-04-24 | Initial public release: 329 pairs, 144 constituencies        |
 
-Subscribe to releases (**Watch → Custom → Releases**) to be notified of
-corrections.
+Subscribe to releases (**Watch → Custom → Releases**) for corrections
+and v1.1 (which will add the scraping + matching scripts).
