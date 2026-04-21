@@ -1,4 +1,0 @@
-constituency_code,constituency_name,constituency_name_ta,year,candidate_name,candidate_name_normalized,party,alliance,affidavit_url,votes_2021,rank_2021,margin_pct_2021,namesake_group_id,namesake_group_size,is_primary_candidate,notes,last_updated
-TN-001,Example North,,2026,A. Sample,a sample,PARTY-A,ALLIANCE-1,,,,4.2,,,,Example row — delete before release,2026-04-22
-TN-001,Example North,,2026,A Sample,a sample,IND,,,,,4.2,NS-001-a,2,false,Example row — delete before release,2026-04-22
-TN-002,Example South,,2026,B. Demo,b demo,PARTY-B,ALLIANCE-2,,54321,2,1.1,,,,Example row — delete before release,2026-04-22
