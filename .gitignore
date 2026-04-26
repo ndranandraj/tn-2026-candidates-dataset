@@ -1,0 +1,50 @@
+# ─── Secrets ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+.env.example
+*.pem
+*.key
+
+# ─── Python ─────────────────────────────────────────────────────
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ─── Editor / OS noise ──────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ─── Metabase (local BI tool) ───────────────────────────────────
+metabase.jar
+metabase.db.*
+plugins/
+
+# ─── Source code + data we're NOT publishing in this release ────
+# (kept locally for reproduction; not exposed in this repo)
+notebooks/
+pipelines/
+processed/
+raw/
+sql/
+SETUP_GUIDE.md
+tn-elections-story.md
+requirements.txt
+
+# ─── Dashboard assets not part of this dataset release ──────────
+dashboard/data.json
+dashboard/index.html
+dashboard/tn_constituencies.geojson
+dashboard/tamil-nadu-assembly-constituencies-geo-data-2021.zip
+dashboard/myneta_debug_page.html
