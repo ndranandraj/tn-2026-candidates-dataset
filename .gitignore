@@ -41,6 +41,8 @@ sql/
 SETUP_GUIDE.md
 tn-elections-story.md
 requirements.txt
+DB_RUNBOOK.md
+MAY_4_RUNBOOK.md
 
 # ─── Dashboard assets not part of this dataset release ──────────
 dashboard/data.json
@@ -48,3 +50,28 @@ dashboard/index.html
 dashboard/tn_constituencies.geojson
 dashboard/tamil-nadu-assembly-constituencies-geo-data-2021.zip
 dashboard/myneta_debug_page.html
+
+# ─── Internal Claude session files (workflow notes, not for the public repo) ─
+CLAUDE.md
+NOTES.md
+venv-py314-broken/
+
+# ─── Internal working docs (playbooks, runbooks, scratch) ───────
+# These are private operational notes and strategy memos. Keep
+# everything we write for ourselves rather than for the dataset
+# audience under one of these patterns. The convention is:
+# - docs/      : private operational/strategy memos
+# - *PLAYBOOK* : strategy playbooks (any directory)
+# - *RUNBOOK*  : ops runbooks (any directory)
+# - deploy_*   : local deploy helpers tied to this machine
+# - diagnose_*, test_*  : ad-hoc debug scripts
+# Anything we want to publish goes outside these patterns.
+docs/
+*PLAYBOOK*.md
+*RUNBOOK*.md
+deploy_*.sh
+diagnose_*.py
+test_live_*.py
+test_parser_*.py
+reset_2026_*.sql
+browser_extract_*.js
