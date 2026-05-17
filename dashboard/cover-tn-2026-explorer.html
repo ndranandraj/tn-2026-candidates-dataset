@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TN 2026 Explorer — cover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #0A0A12; color: #FFFFFF;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  :root {
+    --accent: #F59E0B;
+    --accent-glow: rgba(245,158,11,0.16);
+    --ink-2: rgba(255,255,255,0.74);
+    --ink-3: rgba(255,255,255,0.42);
+    --rule: rgba(255,255,255,0.08);
+  }
+
+  .bg-glow-r { position: absolute; width: 720px; height: 720px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,158,11,0.16) 0%, rgba(245,158,11,0.03) 40%, transparent 70%);
+    top: -180px; right: -180px; z-index: 0; }
+  .bg-glow-l { position: absolute; width: 540px; height: 540px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, transparent 70%);
+    bottom: -120px; left: -100px; z-index: 0; }
+  .bg-grid { position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 48px 48px; }
+
+  .frame { position: relative; z-index: 1; width: 100%; height: 100%;
+    display: grid; grid-template-columns: 660px 1fr;
+    grid-template-rows: 70px 1fr 80px;
+    padding: 0 56px; }
+
+  .topbar { grid-column: 1/3; display: flex; align-items: center; justify-content: space-between;
+    padding-top: 28px; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
+  .brand { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; gap: 9px; }
+  .brand-pip { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .results-badge { display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.70rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 100px;
+    background: var(--accent-glow); border: 1px solid rgba(245,158,11,0.42); color: var(--accent); }
+  .results-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  .text-col { grid-column: 1; grid-row: 2; padding: 26px 0 0 0; display: flex; flex-direction: column; }
+  .kicker { display: flex; align-items: center; gap: 11px; margin-bottom: 14px; }
+  .kicker-line { width: 32px; height: 2px; background: var(--accent); }
+  .kicker-text { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+
+  .title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4.2rem; font-weight: 900; line-height: 0.98; letter-spacing: -0.020em;
+    color: #FFFFFF; margin-bottom: 8px;
+  }
+  .title em { font-style: italic; color: var(--accent); font-weight: 900; }
+  .subtitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic; font-size: 1.85rem; font-weight: 700;
+    color: var(--ink-2); letter-spacing: -0.01em;
+    margin-bottom: 22px; line-height: 1.10;
+  }
+  .lede {
+    font-size: 0.96rem; color: var(--ink-2); line-height: 1.55; max-width: 560px;
+  }
+  .lede strong { color: #FFFFFF; font-weight: 700; }
+
+  .lattice-col { grid-column: 2; grid-row: 2; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding-top: 14px; gap: 12px; }
+  .lattice-frame {
+    background: rgba(255,255,255,0.025); border: 1px solid var(--rule);
+    border-radius: 14px; padding: 22px 26px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 18px 36px -18px rgba(0,0,0,0.55);
+  }
+  .lattice-label {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-3); margin-bottom: 12px; text-align: center;
+  }
+  .lattice-legend {
+    display: flex; gap: 14px; font-size: 0.62rem; color: var(--ink-2); font-weight: 600;
+    letter-spacing: 0.04em; flex-wrap: wrap; justify-content: center; max-width: 460px;
+  }
+  .lattice-legend .item { display: inline-flex; align-items: center; gap: 5px; }
+  .lattice-legend .sw { width: 10px; height: 10px; border-radius: 2px; }
+
+  .kpi-strip { grid-column: 1/3; grid-row: 3;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0 22px; border-top: 1px solid var(--rule); }
+  .author { display: flex; align-items: center; gap: 10px; }
+  .author-avatar { width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(135deg, #D97706, var(--accent));
+    display: flex; align-items: center; justify-content: center; font-size: 0.74rem; font-weight: 800; color: #1a1a14; }
+  .author-name { font-size: 0.78rem; font-weight: 600; color: var(--ink-2); }
+  .author-handle { font-size: 0.64rem; color: var(--ink-3); }
+  .kpis { display: flex; gap: 26px; }
+  .kpi { display: flex; flex-direction: column; align-items: flex-end; }
+  .kpi .num { font-size: 1.45rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .kpi .num.tvk { color: #C084FC; }
+  .kpi .num.dmk { color: #FCA5A5; }
+  .kpi .num.admk { color: #86EFAC; }
+  .kpi .num.accent { color: var(--accent); }
+  .kpi .label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-3); margin-top: 5px; }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow-r"></div>
+<div class="bg-glow-l"></div>
+
+<div class="frame">
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-pip"></span>ndranandraj.com</div>
+    <div class="results-badge"><span class="results-badge-dot"></span>Tamil Nadu 2026 · Comprehensive Explorer</div>
+  </header>
+
+  <div class="text-col">
+    <div class="kicker">
+      <span class="kicker-line"></span>
+      <span class="kicker-text">New · Interactive Dashboard</span>
+    </div>
+    <h1 class="title">TN 2026 <em>Explorer</em></h1>
+    <div class="subtitle">every seat, every party, every region</div>
+    <p class="lede">
+      <strong>234 constituencies. 12 parties with seats. 4.93 crore votes.</strong>
+      One page. Map, party efficiency, regional anatomy, 2021 → 2026 swing, demographics, defeated incumbents, dummy near-misses. The interactive companion to the five-post TN 2026 series.
+    </p>
+  </div>
+
+  <div class="lattice-col">
+    <div class="lattice-frame">
+      <div class="lattice-label">All 234 constituencies · colored by winner</div>
+      <svg width="464" height="334" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="1" data-party="TVK"/>
+<rect x="26" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="2" data-party="TVK"/>
+<rect x="52" y="0" width="22" height="22" rx="3" fill="#16A34A" data-ac="3" data-party="ADMK"/>
+<rect x="78" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="4" data-party="TVK"/>
+<rect x="104" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="5" data-party="TVK"/>
+<rect x="130" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="6" data-party="TVK"/>
+<rect x="156" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="7" data-party="TVK"/>
+<rect x="182" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="8" data-party="TVK"/>
+<rect x="208" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="9" data-party="TVK"/>
+<rect x="234" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="10" data-party="TVK"/>
+<rect x="260" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="11" data-party="TVK"/>
+<rect x="286" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="12" data-party="TVK"/>
+<rect x="312" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="13" data-party="TVK"/>
+<rect x="338" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="14" data-party="TVK"/>
+<rect x="364" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="15" data-party="TVK"/>
+<rect x="390" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="16" data-party="TVK"/>
+<rect x="416" y="0" width="22" height="22" rx="3" fill="#A855F7" data-ac="17" data-party="TVK"/>
+<rect x="442" y="0" width="22" height="22" rx="3" fill="#E5172A" data-ac="18" data-party="DMK"/>
+<rect x="0" y="26" width="22" height="22" rx="3" fill="#E5172A" data-ac="19" data-party="DMK"/>
+<rect x="26" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="20" data-party="TVK"/>
+<rect x="52" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="21" data-party="TVK"/>
+<rect x="78" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="22" data-party="TVK"/>
+<rect x="104" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="23" data-party="TVK"/>
+<rect x="130" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="24" data-party="TVK"/>
+<rect x="156" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="25" data-party="TVK"/>
+<rect x="182" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="26" data-party="TVK"/>
+<rect x="208" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="27" data-party="TVK"/>
+<rect x="234" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="28" data-party="TVK"/>
+<rect x="260" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="29" data-party="TVK"/>
+<rect x="286" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="30" data-party="TVK"/>
+<rect x="312" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="31" data-party="TVK"/>
+<rect x="338" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="32" data-party="TVK"/>
+<rect x="364" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="33" data-party="TVK"/>
+<rect x="390" y="26" width="22" height="22" rx="3" fill="#16A34A" data-ac="34" data-party="ADMK"/>
+<rect x="416" y="26" width="22" height="22" rx="3" fill="#16A34A" data-ac="35" data-party="ADMK"/>
+<rect x="442" y="26" width="22" height="22" rx="3" fill="#A855F7" data-ac="36" data-party="TVK"/>
+<rect x="0" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="37" data-party="TVK"/>
+<rect x="26" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="38" data-party="TVK"/>
+<rect x="52" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="39" data-party="TVK"/>
+<rect x="78" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="40" data-party="TVK"/>
+<rect x="104" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="41" data-party="TVK"/>
+<rect x="130" y="52" width="22" height="22" rx="3" fill="#16A34A" data-ac="42" data-party="ADMK"/>
+<rect x="156" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="43" data-party="TVK"/>
+<rect x="182" y="52" width="22" height="22" rx="3" fill="#16A34A" data-ac="44" data-party="ADMK"/>
+<rect x="208" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="45" data-party="TVK"/>
+<rect x="234" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="46" data-party="TVK"/>
+<rect x="260" y="52" width="22" height="22" rx="3" fill="#14532D" data-ac="47" data-party="IUML"/>
+<rect x="286" y="52" width="22" height="22" rx="3" fill="#E5172A" data-ac="48" data-party="DMK"/>
+<rect x="312" y="52" width="22" height="22" rx="3" fill="#16A34A" data-ac="49" data-party="ADMK"/>
+<rect x="338" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="50" data-party="TVK"/>
+<rect x="364" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="51" data-party="TVK"/>
+<rect x="390" y="52" width="22" height="22" rx="3" fill="#16A34A" data-ac="52" data-party="ADMK"/>
+<rect x="416" y="52" width="22" height="22" rx="3" fill="#A855F7" data-ac="53" data-party="TVK"/>
+<rect x="442" y="52" width="22" height="22" rx="3" fill="#E5172A" data-ac="54" data-party="DMK"/>
+<rect x="0" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="55" data-party="ADMK"/>
+<rect x="26" y="78" width="22" height="22" rx="3" fill="#B91C1C" data-ac="56" data-party="CPI"/>
+<rect x="52" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="57" data-party="ADMK"/>
+<rect x="78" y="78" width="22" height="22" rx="3" fill="#A855F7" data-ac="58" data-party="TVK"/>
+<rect x="104" y="78" width="22" height="22" rx="3" fill="#FACC15" data-ac="59" data-party="PMK"/>
+<rect x="130" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="60" data-party="ADMK"/>
+<rect x="156" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="61" data-party="ADMK"/>
+<rect x="182" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="62" data-party="ADMK"/>
+<rect x="208" y="78" width="22" height="22" rx="3" fill="#E5172A" data-ac="63" data-party="DMK"/>
+<rect x="234" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="64" data-party="ADMK"/>
+<rect x="260" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="65" data-party="ADMK"/>
+<rect x="286" y="78" width="22" height="22" rx="3" fill="#A855F7" data-ac="66" data-party="TVK"/>
+<rect x="312" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="67" data-party="ADMK"/>
+<rect x="338" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="68" data-party="ADMK"/>
+<rect x="364" y="78" width="22" height="22" rx="3" fill="#E5172A" data-ac="69" data-party="DMK"/>
+<rect x="390" y="78" width="22" height="22" rx="3" fill="#FACC15" data-ac="70" data-party="PMK"/>
+<rect x="416" y="78" width="22" height="22" rx="3" fill="#16A34A" data-ac="71" data-party="ADMK"/>
+<rect x="442" y="78" width="22" height="22" rx="3" fill="#1E40AF" data-ac="72" data-party="VCK"/>
+<rect x="0" y="104" width="22" height="22" rx="3" fill="#E5172A" data-ac="73" data-party="DMK"/>
+<rect x="26" y="104" width="22" height="22" rx="3" fill="#E5172A" data-ac="74" data-party="DMK"/>
+<rect x="52" y="104" width="22" height="22" rx="3" fill="#FACC15" data-ac="75" data-party="PMK"/>
+<rect x="78" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="76" data-party="ADMK"/>
+<rect x="104" y="104" width="22" height="22" rx="3" fill="#E5172A" data-ac="77" data-party="DMK"/>
+<rect x="130" y="104" width="22" height="22" rx="3" fill="#E5172A" data-ac="78" data-party="DMK"/>
+<rect x="156" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="79" data-party="ADMK"/>
+<rect x="182" y="104" width="22" height="22" rx="3" fill="#A855F7" data-ac="80" data-party="TVK"/>
+<rect x="208" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="81" data-party="ADMK"/>
+<rect x="234" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="82" data-party="ADMK"/>
+<rect x="260" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="83" data-party="ADMK"/>
+<rect x="286" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="84" data-party="ADMK"/>
+<rect x="312" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="85" data-party="ADMK"/>
+<rect x="338" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="86" data-party="ADMK"/>
+<rect x="364" y="104" width="22" height="22" rx="3" fill="#16A34A" data-ac="87" data-party="ADMK"/>
+<rect x="390" y="104" width="22" height="22" rx="3" fill="#A855F7" data-ac="88" data-party="TVK"/>
+<rect x="416" y="104" width="22" height="22" rx="3" fill="#A855F7" data-ac="89" data-party="TVK"/>
+<rect x="442" y="104" width="22" height="22" rx="3" fill="#A855F7" data-ac="90" data-party="TVK"/>
+<rect x="0" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="91" data-party="TVK"/>
+<rect x="26" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="92" data-party="TVK"/>
+<rect x="52" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="93" data-party="TVK"/>
+<rect x="78" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="94" data-party="TVK"/>
+<rect x="104" y="130" width="22" height="22" rx="3" fill="#16A34A" data-ac="95" data-party="ADMK"/>
+<rect x="130" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="96" data-party="TVK"/>
+<rect x="156" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="97" data-party="TVK"/>
+<rect x="182" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="98" data-party="TVK"/>
+<rect x="208" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="99" data-party="TVK"/>
+<rect x="234" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="100" data-party="TVK"/>
+<rect x="260" y="130" width="22" height="22" rx="3" fill="#16A34A" data-ac="101" data-party="ADMK"/>
+<rect x="286" y="130" width="22" height="22" rx="3" fill="#16A34A" data-ac="102" data-party="ADMK"/>
+<rect x="312" y="130" width="22" height="22" rx="3" fill="#16A34A" data-ac="103" data-party="ADMK"/>
+<rect x="338" y="130" width="22" height="22" rx="3" fill="#16A34A" data-ac="104" data-party="ADMK"/>
+<rect x="364" y="130" width="22" height="22" rx="3" fill="#16A34A" data-ac="105" data-party="ADMK"/>
+<rect x="390" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="106" data-party="TVK"/>
+<rect x="416" y="130" width="22" height="22" rx="3" fill="#A855F7" data-ac="107" data-party="TVK"/>
+<rect x="442" y="130" width="22" height="22" rx="3" fill="#F97316" data-ac="108" data-party="BJP"/>
+<rect x="0" y="156" width="22" height="22" rx="3" fill="#E5172A" data-ac="109" data-party="DMK"/>
+<rect x="26" y="156" width="22" height="22" rx="3" fill="#E5172A" data-ac="110" data-party="DMK"/>
+<rect x="52" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="111" data-party="TVK"/>
+<rect x="78" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="112" data-party="TVK"/>
+<rect x="104" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="113" data-party="TVK"/>
+<rect x="130" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="114" data-party="TVK"/>
+<rect x="156" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="115" data-party="TVK"/>
+<rect x="182" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="116" data-party="TVK"/>
+<rect x="208" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="117" data-party="TVK"/>
+<rect x="234" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="118" data-party="TVK"/>
+<rect x="260" y="156" width="22" height="22" rx="3" fill="#16A34A" data-ac="119" data-party="ADMK"/>
+<rect x="286" y="156" width="22" height="22" rx="3" fill="#E5172A" data-ac="120" data-party="DMK"/>
+<rect x="312" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="121" data-party="TVK"/>
+<rect x="338" y="156" width="22" height="22" rx="3" fill="#A855F7" data-ac="122" data-party="TVK"/>
+<rect x="364" y="156" width="22" height="22" rx="3" fill="#E5172A" data-ac="123" data-party="DMK"/>
+<rect x="390" y="156" width="22" height="22" rx="3" fill="#E5172A" data-ac="124" data-party="DMK"/>
+<rect x="416" y="156" width="22" height="22" rx="3" fill="#E5172A" data-ac="125" data-party="DMK"/>
+<rect x="442" y="156" width="22" height="22" rx="3" fill="#E5172A" data-ac="126" data-party="DMK"/>
+<rect x="0" y="182" width="22" height="22" rx="3" fill="#16A34A" data-ac="127" data-party="ADMK"/>
+<rect x="26" y="182" width="22" height="22" rx="3" fill="#E5172A" data-ac="128" data-party="DMK"/>
+<rect x="52" y="182" width="22" height="22" rx="3" fill="#E5172A" data-ac="129" data-party="DMK"/>
+<rect x="78" y="182" width="22" height="22" rx="3" fill="#A855F7" data-ac="130" data-party="TVK"/>
+<rect x="104" y="182" width="22" height="22" rx="3" fill="#16A34A" data-ac="131" data-party="ADMK"/>
+<rect x="130" y="182" width="22" height="22" rx="3" fill="#E5172A" data-ac="132" data-party="DMK"/>
+<rect x="156" y="182" width="22" height="22" rx="3" fill="#E5172A" data-ac="133" data-party="DMK"/>
+<rect x="182" y="182" width="22" height="22" rx="3" fill="#E5172A" data-ac="134" data-party="DMK"/>
+<rect x="208" y="182" width="22" height="22" rx="3" fill="#16A34A" data-ac="135" data-party="ADMK"/>
+<rect x="234" y="182" width="22" height="22" rx="3" fill="#A855F7" data-ac="136" data-party="TVK"/>
+<rect x="260" y="182" width="22" height="22" rx="3" fill="#E5172A" data-ac="137" data-party="DMK"/>
+<rect x="286" y="182" width="22" height="22" rx="3" fill="#A855F7" data-ac="138" data-party="TVK"/>
+<rect x="312" y="182" width="22" height="22" rx="3" fill="#A855F7" data-ac="139" data-party="TVK"/>
+<rect x="338" y="182" width="22" height="22" rx="3" fill="#E5172A" data-ac="140" data-party="DMK"/>
+<rect x="364" y="182" width="22" height="22" rx="3" fill="#A855F7" data-ac="141" data-party="TVK"/>
+<rect x="390" y="182" width="22" height="22" rx="3" fill="#A855F7" data-ac="142" data-party="TVK"/>
+<rect x="416" y="182" width="22" height="22" rx="3" fill="#16A34A" data-ac="143" data-party="ADMK"/>
+<rect x="442" y="182" width="22" height="22" rx="3" fill="#E5172A" data-ac="144" data-party="DMK"/>
+<rect x="0" y="208" width="22" height="22" rx="3" fill="#A855F7" data-ac="145" data-party="TVK"/>
+<rect x="26" y="208" width="22" height="22" rx="3" fill="#A855F7" data-ac="146" data-party="TVK"/>
+<rect x="52" y="208" width="22" height="22" rx="3" fill="#A855F7" data-ac="147" data-party="TVK"/>
+<rect x="78" y="208" width="22" height="22" rx="3" fill="#E5172A" data-ac="148" data-party="DMK"/>
+<rect x="104" y="208" width="22" height="22" rx="3" fill="#16A34A" data-ac="149" data-party="ADMK"/>
+<rect x="130" y="208" width="22" height="22" rx="3" fill="#FACC15" data-ac="150" data-party="PMK"/>
+<rect x="156" y="208" width="22" height="22" rx="3" fill="#E5172A" data-ac="151" data-party="DMK"/>
+<rect x="182" y="208" width="22" height="22" rx="3" fill="#EAB308" data-ac="152" data-party="DMDK"/>
+<rect x="208" y="208" width="22" height="22" rx="3" fill="#16A34A" data-ac="153" data-party="ADMK"/>
+<rect x="234" y="208" width="22" height="22" rx="3" fill="#16A34A" data-ac="154" data-party="ADMK"/>
+<rect x="260" y="208" width="22" height="22" rx="3" fill="#A855F7" data-ac="155" data-party="TVK"/>
+<rect x="286" y="208" width="22" height="22" rx="3" fill="#E5172A" data-ac="156" data-party="DMK"/>
+<rect x="312" y="208" width="22" height="22" rx="3" fill="#16A34A" data-ac="157" data-party="ADMK"/>
+<rect x="338" y="208" width="22" height="22" rx="3" fill="#E5172A" data-ac="158" data-party="DMK"/>
+<rect x="364" y="208" width="22" height="22" rx="3" fill="#1E40AF" data-ac="159" data-party="VCK"/>
+<rect x="390" y="208" width="22" height="22" rx="3" fill="#E5172A" data-ac="160" data-party="DMK"/>
+<rect x="416" y="208" width="22" height="22" rx="3" fill="#2563EB" data-ac="161" data-party="INC"/>
+<rect x="442" y="208" width="22" height="22" rx="3" fill="#E5172A" data-ac="162" data-party="DMK"/>
+<rect x="0" y="234" width="22" height="22" rx="3" fill="#E5172A" data-ac="163" data-party="DMK"/>
+<rect x="26" y="234" width="22" height="22" rx="3" fill="#B91C1C" data-ac="164" data-party="CPI(M)"/>
+<rect x="52" y="234" width="22" height="22" rx="3" fill="#16A34A" data-ac="165" data-party="ADMK"/>
+<rect x="78" y="234" width="22" height="22" rx="3" fill="#B91C1C" data-ac="166" data-party="CPI"/>
+<rect x="104" y="234" width="22" height="22" rx="3" fill="#7C3AED" data-ac="167" data-party="AMMK"/>
+<rect x="130" y="234" width="22" height="22" rx="3" fill="#E5172A" data-ac="168" data-party="DMK"/>
+<rect x="156" y="234" width="22" height="22" rx="3" fill="#16A34A" data-ac="169" data-party="ADMK"/>
+<rect x="182" y="234" width="22" height="22" rx="3" fill="#E5172A" data-ac="170" data-party="DMK"/>
+<rect x="208" y="234" width="22" height="22" rx="3" fill="#A855F7" data-ac="171" data-party="TVK"/>
+<rect x="234" y="234" width="22" height="22" rx="3" fill="#14532D" data-ac="172" data-party="IUML"/>
+<rect x="260" y="234" width="22" height="22" rx="3" fill="#E5172A" data-ac="173" data-party="DMK"/>
+<rect x="286" y="234" width="22" height="22" rx="3" fill="#A855F7" data-ac="174" data-party="TVK"/>
+<rect x="312" y="234" width="22" height="22" rx="3" fill="#E5172A" data-ac="175" data-party="DMK"/>
+<rect x="338" y="234" width="22" height="22" rx="3" fill="#E5172A" data-ac="176" data-party="DMK"/>
+<rect x="364" y="234" width="22" height="22" rx="3" fill="#E5172A" data-ac="177" data-party="DMK"/>
+<rect x="390" y="234" width="22" height="22" rx="3" fill="#A855F7" data-ac="178" data-party="TVK"/>
+<rect x="416" y="234" width="22" height="22" rx="3" fill="#16A34A" data-ac="179" data-party="ADMK"/>
+<rect x="442" y="234" width="22" height="22" rx="3" fill="#E5172A" data-ac="180" data-party="DMK"/>
+<rect x="0" y="260" width="22" height="22" rx="3" fill="#E5172A" data-ac="181" data-party="DMK"/>
+<rect x="26" y="260" width="22" height="22" rx="3" fill="#E5172A" data-ac="182" data-party="DMK"/>
+<rect x="52" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="183" data-party="TVK"/>
+<rect x="78" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="184" data-party="TVK"/>
+<rect x="104" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="185" data-party="TVK"/>
+<rect x="130" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="186" data-party="TVK"/>
+<rect x="156" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="187" data-party="TVK"/>
+<rect x="182" y="260" width="22" height="22" rx="3" fill="#2563EB" data-ac="188" data-party="INC"/>
+<rect x="208" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="189" data-party="TVK"/>
+<rect x="234" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="190" data-party="TVK"/>
+<rect x="260" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="191" data-party="TVK"/>
+<rect x="286" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="192" data-party="TVK"/>
+<rect x="312" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="193" data-party="TVK"/>
+<rect x="338" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="194" data-party="TVK"/>
+<rect x="364" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="195" data-party="TVK"/>
+<rect x="390" y="260" width="22" height="22" rx="3" fill="#E5172A" data-ac="196" data-party="DMK"/>
+<rect x="416" y="260" width="22" height="22" rx="3" fill="#A855F7" data-ac="197" data-party="TVK"/>
+<rect x="442" y="260" width="22" height="22" rx="3" fill="#E5172A" data-ac="198" data-party="DMK"/>
+<rect x="0" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="199" data-party="TVK"/>
+<rect x="26" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="200" data-party="DMK"/>
+<rect x="52" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="201" data-party="TVK"/>
+<rect x="78" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="202" data-party="TVK"/>
+<rect x="104" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="203" data-party="TVK"/>
+<rect x="130" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="204" data-party="DMK"/>
+<rect x="156" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="205" data-party="TVK"/>
+<rect x="182" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="206" data-party="TVK"/>
+<rect x="208" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="207" data-party="DMK"/>
+<rect x="234" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="208" data-party="DMK"/>
+<rect x="260" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="209" data-party="DMK"/>
+<rect x="286" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="210" data-party="TVK"/>
+<rect x="312" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="211" data-party="DMK"/>
+<rect x="338" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="212" data-party="DMK"/>
+<rect x="364" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="213" data-party="DMK"/>
+<rect x="390" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="214" data-party="TVK"/>
+<rect x="416" y="286" width="22" height="22" rx="3" fill="#E5172A" data-ac="215" data-party="DMK"/>
+<rect x="442" y="286" width="22" height="22" rx="3" fill="#A855F7" data-ac="216" data-party="TVK"/>
+<rect x="0" y="312" width="22" height="22" rx="3" fill="#A855F7" data-ac="217" data-party="TVK"/>
+<rect x="26" y="312" width="22" height="22" rx="3" fill="#E5172A" data-ac="218" data-party="DMK"/>
+<rect x="52" y="312" width="22" height="22" rx="3" fill="#16A34A" data-ac="219" data-party="ADMK"/>
+<rect x="78" y="312" width="22" height="22" rx="3" fill="#E5172A" data-ac="220" data-party="DMK"/>
+<rect x="104" y="312" width="22" height="22" rx="3" fill="#E5172A" data-ac="221" data-party="DMK"/>
+<rect x="130" y="312" width="22" height="22" rx="3" fill="#E5172A" data-ac="222" data-party="DMK"/>
+<rect x="156" y="312" width="22" height="22" rx="3" fill="#E5172A" data-ac="223" data-party="DMK"/>
+<rect x="182" y="312" width="22" height="22" rx="3" fill="#A855F7" data-ac="224" data-party="TVK"/>
+<rect x="208" y="312" width="22" height="22" rx="3" fill="#16A34A" data-ac="225" data-party="ADMK"/>
+<rect x="234" y="312" width="22" height="22" rx="3" fill="#E5172A" data-ac="226" data-party="DMK"/>
+<rect x="260" y="312" width="22" height="22" rx="3" fill="#A855F7" data-ac="227" data-party="TVK"/>
+<rect x="286" y="312" width="22" height="22" rx="3" fill="#A855F7" data-ac="228" data-party="TVK"/>
+<rect x="312" y="312" width="22" height="22" rx="3" fill="#16A34A" data-ac="229" data-party="ADMK"/>
+<rect x="338" y="312" width="22" height="22" rx="3" fill="#E5172A" data-ac="230" data-party="DMK"/>
+<rect x="364" y="312" width="22" height="22" rx="3" fill="#2563EB" data-ac="231" data-party="INC"/>
+<rect x="390" y="312" width="22" height="22" rx="3" fill="#B91C1C" data-ac="232" data-party="CPI(M)"/>
+<rect x="416" y="312" width="22" height="22" rx="3" fill="#2563EB" data-ac="233" data-party="INC"/>
+<rect x="442" y="312" width="22" height="22" rx="3" fill="#2563EB" data-ac="234" data-party="INC"/>
+      </svg>
+    </div>
+    <div class="lattice-legend">
+      <span class="item"><span class="sw" style="background:#A855F7"></span>TVK 108</span>
+      <span class="item"><span class="sw" style="background:#E5172A"></span>DMK 59</span>
+      <span class="item"><span class="sw" style="background:#16A34A"></span>AIADMK 47</span>
+      <span class="item"><span class="sw" style="background:#2563EB"></span>INC 5</span>
+      <span class="item"><span class="sw" style="background:#FACC15"></span>PMK 4</span>
+      <span class="item"><span class="sw" style="background:#475569"></span>Others 11</span>
+    </div>
+  </div>
+
+  <div class="kpi-strip">
+    <div class="author">
+      <div class="author-avatar">A</div>
+      <div>
+        <div class="author-name">Anandraj</div>
+        <div class="author-handle">ndranandraj.com</div>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="num tvk">108</div><div class="label">TVK</div></div>
+      <div class="kpi"><div class="num dmk">59</div><div class="label">DMK</div></div>
+      <div class="kpi"><div class="num admk">47</div><div class="label">AIADMK</div></div>
+      <div class="kpi"><div class="num accent">164</div><div class="label">Seats flipped</div></div>
+      <div class="kpi"><div class="num accent">22</div><div class="label">Women MLAs</div></div>
+      <div class="kpi"><div class="num accent">52y</div><div class="label">Median age</div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

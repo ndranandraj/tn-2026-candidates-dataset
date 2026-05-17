@@ -14,7 +14,7 @@ That is not random. AC #88 is the home constituency of **Edappadi K. Palaniswami
 
 The data tells you the rest.
 
-**TVK won 108 of 233 contested seats.** They came second in 72 more, third in 51, and fourth or lower in only 2. They polled **1.72 crore votes (1,72,26,209)**, **34.92% of the statewide vote**, and converted that into **46.15% of the Assembly**. That conversion ratio (1.32 seats per unit of vote share) is the highest of any party with more than 5 seats this cycle, and it is the single most important number for understanding what happened on May 4.
+**TVK won 108 of 233 contested seats.** They came second in 74 more and third in 51. They were never below third place. They polled **1.72 crore votes (1,72,26,209)**, **34.92% of the statewide vote**, and converted that into **46.15% of the Assembly**. That conversion ratio (1.32 seats per unit of vote share) is the highest of any party with more than 5 seats this cycle, and it is the single most important number for understanding what happened on May 4.
 
 But "TVK won" hides a story that gets sharper region by region. The wave was not uniform. It was a tsunami in Chennai and a ripple in the Cauvery delta, and the gap between those two facts is what the rest of this post is about.
 
@@ -71,9 +71,9 @@ Finish-position breakdown:
 | Where TVK landed | ACs | Share of contested |
 |---|---|---|
 | 1st (won) | 108 | 46.4% |
-| 2nd | 72 | 30.9% |
+| 2nd | 74 | 31.8% |
 | 3rd | 51 | 21.9% |
-| 4th or lower | 2 | 0.9% |
+| 4th or lower | 0 | 0.0% |
 
 Translation: in **180 of 233 seats** (77.3%) TVK was either the winner or the runner-up. There is almost no part of Tamil Nadu where TVK did not register as a top-two force. That is the most basic measure of "consolidation" for a debut party, and the number is unusually high.
 
@@ -179,7 +179,7 @@ Eight biggest TVK wins (by absolute margin):
 | TIRUPPUR (NORTH) | V Sathyabama | 69,992 | 26.57% | ADMK |
 | MADURAVOYAL | Rhevanth Charan | 61,509 | 20.94% | DMK |
 
-### When TVK came 2nd (72 seats)
+### When TVK came 2nd (74 seats)
 
 Gap to winner:
 
@@ -219,7 +219,7 @@ When TVK came 2nd, who got pushed to 3rd:
 | VCK | 1 |
 | CPI(M) | 1 |
 
-The ADMK-30 vs DMK-18 split is the cleanest single number for the "TVK ate AIADMK's lunch" thesis. Across the 72 seats where TVK came 2nd, AIADMK was displaced from contention 30 times versus DMK only 18 times.
+The ADMK-32 vs DMK-18 split is the cleanest single number for the "TVK ate AIADMK's lunch" thesis. Across the 74 seats where TVK came 2nd, AIADMK was displaced from contention 32 times versus DMK only 18 times.
 
 Eight closest 2nd-place misses:
 
@@ -319,7 +319,7 @@ The cleanest single number in the analysis is this:
 
 TVK ate dramatically more deeply into AIADMK's fortress than DMK's. Of the 20 NDA strongholds TVK flipped, **15 are in the Kongu belt**: Salem (West and South), Tiruppur (North), Kavundampalayam, Thirupparankundram (technically Madurai), Palladam, Arakonam, Coimbatore North, Kilvaithinankuppam, Gobichettipalayam, Avanashi, Madurai West, Kinathukadavu, Mettupalayam, Kumarapalayam. If you wanted a single sentence to summarise TVK's 2026: *the wave broke AIADMK's western Tamil Nadu base, while DMK's delta and southern coast held.*
 
-The second-place data confirms this from another angle. In the 72 seats where TVK came 2nd, the candidate pushed to 3rd was AIADMK 30 times and DMK 18 times. Even in seats TVK did not win, they were more likely to have displaced AIADMK from contention than DMK. This is the "TVK ate AIADMK's lunch" thesis at scale.
+The second-place data confirms this from another angle. In the 74 seats where TVK came 2nd, the candidate pushed to 3rd was AIADMK 32 times and DMK 18 times. Even in seats TVK did not win, they were more likely to have displaced AIADMK from contention than DMK. This is the "TVK ate AIADMK's lunch" thesis at scale.
 
 ---
 

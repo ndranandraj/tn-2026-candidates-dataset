@@ -75,3 +75,7 @@ test_live_*.py
 test_parser_*.py
 reset_2026_*.sql
 browser_extract_*.js
+scripts/capture_*.py
+
+# Scratchpad from agent sessions
+outputs/

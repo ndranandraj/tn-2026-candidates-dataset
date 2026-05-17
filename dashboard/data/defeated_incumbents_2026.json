@@ -4,8 +4,10 @@
     "incumbents_held": 38,
     "incumbents_lost_or_skipped": 196,
     "contested_and_lost": 56,
-    "did_not_contest_this_seat": 140,
-    "contested_and_lost_to_tvk": 37
+    "contested_and_lost_to_tvk": 37,
+    "shifted_and_won": 5,
+    "shifted_and_lost": 27,
+    "truly_out_of_contest": 108
   },
   "beaten_by_party_2026": {
     "TVK": 37,
@@ -38,13 +40,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 27945,
       "margin_pct_2026": 12.02,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 2,
@@ -78,13 +83,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 5793,
       "margin_pct_2026": 2.43,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 4,
@@ -98,13 +106,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 24760,
       "margin_pct_2026": 10.94,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 5,
@@ -138,13 +149,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 76311,
       "margin_pct_2026": 22.05,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 7,
@@ -178,13 +192,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 58781,
       "margin_pct_2026": 22.61,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 9,
@@ -198,13 +215,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 94985,
       "margin_pct_2026": 26.24,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 10,
@@ -218,13 +238,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 53564,
       "margin_pct_2026": 25.87,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 11,
@@ -238,13 +261,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 49668,
       "margin_pct_2026": 27.41,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 12,
@@ -258,13 +284,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 53715,
       "margin_pct_2026": 26.28,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 13,
@@ -298,13 +327,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 17302,
       "margin_pct_2026": 12.23,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 15,
@@ -318,13 +350,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 22333,
       "margin_pct_2026": 15.52,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 16,
@@ -338,13 +373,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 10804,
       "margin_pct_2026": 9.02,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 17,
@@ -358,13 +396,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 14249,
       "margin_pct_2026": 11.19,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 18,
@@ -378,13 +419,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 11750,
       "margin_pct_2026": 11.79,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 20,
@@ -398,13 +442,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 15141,
       "margin_pct_2026": 11.49,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 21,
@@ -418,13 +465,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 21363,
       "margin_pct_2026": 13.08,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 22,
@@ -438,13 +488,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 27086,
       "margin_pct_2026": 15.67,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 23,
@@ -478,13 +531,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 13027,
       "margin_pct_2026": 9.73,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 25,
@@ -518,13 +574,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 33305,
       "margin_pct_2026": 18.02,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 27,
@@ -598,13 +657,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 54693,
       "margin_pct_2026": 19.28,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_won",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 218,
+      "shifted_to_ac_name": "KOVILPATTI",
+      "shifted_to_party": "Dravida Munnetra Kazhagam",
+      "shifted_won": true
     },
     {
       "ac_no": 31,
@@ -618,13 +681,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 35621,
       "margin_pct_2026": 12.78,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 169,
+      "shifted_to_ac_name": "NANNILAM",
+      "shifted_to_party": "All India Puratchi Thalaivar Makkal Munnettra Kazhagam",
+      "shifted_won": false
     },
     {
       "ac_no": 32,
@@ -638,13 +705,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 35641,
       "margin_pct_2026": 11.0,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 33,
@@ -658,13 +728,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 39351,
       "margin_pct_2026": 15.0,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 40,
+      "shifted_to_ac_name": "KATPADI",
+      "shifted_to_party": "Tamil Nadu Ilangyar Katchi",
+      "shifted_won": false
     },
     {
       "ac_no": 34,
@@ -678,13 +752,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 5668,
       "margin_pct_2026": 3.02,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 35,
@@ -698,13 +775,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 7194,
       "margin_pct_2026": 3.63,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 36,
@@ -738,13 +818,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 15488,
       "margin_pct_2026": 6.29,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 38,
@@ -858,13 +941,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 6777,
       "margin_pct_2026": 3.56,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 134,
+      "shifted_to_ac_name": "ARAVAKURICHI",
+      "shifted_to_party": "Tamilaga Vettri Kazhagam",
+      "shifted_won": false
     },
     {
       "ac_no": 44,
@@ -898,13 +985,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 20255,
       "margin_pct_2026": 10.67,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 46,
@@ -918,13 +1008,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 10097,
       "margin_pct_2026": 4.41,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 47,
@@ -938,13 +1031,16 @@
       "winner_party_2026": "IUML",
       "margin_2026": 2982,
       "margin_pct_2026": 1.4,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 49,
@@ -958,13 +1054,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 16083,
       "margin_pct_2026": 7.55,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 50,
@@ -978,13 +1077,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 48263,
       "margin_pct_2026": 23.78,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 51,
@@ -1018,13 +1120,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 4241,
       "margin_pct_2026": 1.98,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 53,
@@ -1058,13 +1163,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 138,
       "margin_pct_2026": 0.06,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 55,
@@ -1078,13 +1186,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 27803,
       "margin_pct_2026": 10.01,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 58,
@@ -1098,13 +1209,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 3165,
       "margin_pct_2026": 1.38,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 79,
+      "shifted_to_ac_name": "SANKARAPURAM",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 59,
@@ -1118,13 +1233,16 @@
       "winner_party_2026": "PMK",
       "margin_2026": 20896,
       "margin_pct_2026": 8.76,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 60,
@@ -1138,13 +1256,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 33114,
       "margin_pct_2026": 13.99,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 62,
@@ -1158,13 +1279,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 13278,
       "margin_pct_2026": 5.47,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 63,
@@ -1178,13 +1302,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 2455,
       "margin_pct_2026": 1.12,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 64,
@@ -1198,13 +1325,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 30465,
       "margin_pct_2026": 13.86,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 65,
@@ -1238,13 +1368,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 227,
       "margin_pct_2026": 0.11,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_won",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 65,
+      "shifted_to_ac_name": "KALASAPAKKAM",
+      "shifted_to_party": "All India Anna Dravida Munnetra Kazhagam",
+      "shifted_won": true
     },
     {
       "ac_no": 67,
@@ -1258,13 +1392,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 5631,
       "margin_pct_2026": 2.45,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 68,
@@ -1298,13 +1435,16 @@
       "winner_party_2026": "PMK",
       "margin_2026": 12645,
       "margin_pct_2026": 5.84,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 71,
@@ -1318,13 +1458,17 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 30041,
       "margin_pct_2026": 15.88,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_won",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 75,
+      "shifted_to_ac_name": "VIKRAVANDI",
+      "shifted_to_party": "Pattali Makkal Katchi",
+      "shifted_won": true
     },
     {
       "ac_no": 72,
@@ -1358,13 +1502,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 7034,
       "margin_pct_2026": 3.66,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 75,
@@ -1378,13 +1525,16 @@
       "winner_party_2026": "PMK",
       "margin_2026": 910,
       "margin_pct_2026": 0.43,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 76,
@@ -1398,13 +1548,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 285,
       "margin_pct_2026": 0.13,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 77,
@@ -1418,13 +1571,17 @@
       "winner_party_2026": "DMK",
       "margin_2026": 2277,
       "margin_pct_2026": 0.84,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 128,
+      "shifted_to_ac_name": "ODDANCHATRAM",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 79,
@@ -1458,13 +1615,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 798,
       "margin_pct_2026": 0.32,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 145,
+      "shifted_to_ac_name": "MUSIRI",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 83,
@@ -1478,13 +1639,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 2189,
       "margin_pct_2026": 0.86,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 84,
@@ -1498,13 +1662,17 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 14539,
       "margin_pct_2026": 5.36,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 118,
+      "shifted_to_ac_name": "COIMBATORE (NORTH)",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 85,
@@ -1518,13 +1686,17 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 19105,
       "margin_pct_2026": 8.27,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 89,
+      "shifted_to_ac_name": "SALEM (NORTH)",
+      "shifted_to_party": "Pattali Makkal Katchi",
+      "shifted_won": false
     },
     {
       "ac_no": 87,
@@ -1538,13 +1710,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 9517,
       "margin_pct_2026": 3.9,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 88,
@@ -1558,13 +1733,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 74867,
       "margin_pct_2026": 31.94,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 219,
+      "shifted_to_ac_name": "SANKARANKOVIL",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 89,
@@ -1578,13 +1757,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 14034,
       "margin_pct_2026": 6.66,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 16,
+      "shifted_to_ac_name": "EGMORE",
+      "shifted_to_party": "National Maha Sabha Party",
+      "shifted_won": false
     },
     {
       "ac_no": 90,
@@ -1598,13 +1781,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 33369,
       "margin_pct_2026": 16.05,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 91,
@@ -1618,13 +1804,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 4071,
       "margin_pct_2026": 1.73,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 92,
@@ -1658,13 +1847,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 2655,
       "margin_pct_2026": 1.27,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 94,
@@ -1678,13 +1870,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 11008,
       "margin_pct_2026": 5.19,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 96,
@@ -1718,13 +1913,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 7696,
       "margin_pct_2026": 3.75,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 98,
@@ -1738,13 +1936,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 23966,
       "margin_pct_2026": 14.75,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 99,
@@ -1758,13 +1959,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 22250,
       "margin_pct_2026": 10.05,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 94,
+      "shifted_to_ac_name": "NAMAKKAL",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 100,
@@ -1778,13 +1983,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 2430,
       "margin_pct_2026": 1.27,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 101,
@@ -1798,13 +2006,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 16727,
       "margin_pct_2026": 8.37,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 102,
@@ -1818,13 +2029,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 8133,
       "margin_pct_2026": 4.0,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 105,
@@ -1838,13 +2052,17 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 1260,
       "margin_pct_2026": 0.68,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 106,
+      "shifted_to_ac_name": "GOBICHETTIPALAYAM",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 107,
@@ -1878,13 +2096,17 @@
       "winner_party_2026": "BJP",
       "margin_2026": 976,
       "margin_pct_2026": 0.66,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 69,
+      "shifted_to_ac_name": "VANDAVASI",
+      "shifted_to_party": "Naam Tamilar Katchi",
+      "shifted_won": false
     },
     {
       "ac_no": 109,
@@ -1918,13 +2140,17 @@
       "winner_party_2026": "DMK",
       "margin_2026": 8099,
       "margin_pct_2026": 5.73,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 64,
+      "shifted_to_ac_name": "KILPENNATHUR",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 111,
@@ -1938,13 +2164,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 7768,
       "margin_pct_2026": 3.18,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 97,
+      "shifted_to_ac_name": "KUMARAPALAYAM",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 112,
@@ -1958,13 +2188,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 15373,
       "margin_pct_2026": 6.64,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 88,
+      "shifted_to_ac_name": "SALEM (WEST)",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 113,
@@ -1978,13 +2212,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 69992,
       "margin_pct_2026": 26.57,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 114,
@@ -1998,13 +2235,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 12901,
       "margin_pct_2026": 7.17,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 97,
+      "shifted_to_ac_name": "KUMARAPALAYAM",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 115,
@@ -2018,13 +2259,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 37897,
       "margin_pct_2026": 12.59,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 116,
@@ -2058,13 +2302,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 42140,
       "margin_pct_2026": 11.58,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 118,
@@ -2078,13 +2325,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 21992,
       "margin_pct_2026": 9.73,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 120,
+      "shifted_to_ac_name": "COIMBATORE (SOUTH)",
+      "shifted_to_party": "All India Anna Dravida Munnetra Kazhagam",
+      "shifted_won": false
     },
     {
       "ac_no": 120,
@@ -2098,13 +2349,17 @@
       "winner_party_2026": "DMK",
       "margin_2026": 2271,
       "margin_pct_2026": 1.45,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 118,
+      "shifted_to_ac_name": "COIMBATORE (NORTH)",
+      "shifted_to_party": "Bharatiya Janata Party",
+      "shifted_won": false
     },
     {
       "ac_no": 121,
@@ -2118,13 +2373,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 19139,
       "margin_pct_2026": 8.66,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 122,
@@ -2178,13 +2436,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 9371,
       "margin_pct_2026": 6.23,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 125,
@@ -2218,13 +2479,17 @@
       "winner_party_2026": "DMK",
       "margin_2026": 15968,
       "margin_pct_2026": 8.48,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 111,
+      "shifted_to_ac_name": "METTUPPALAYAM",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 127,
@@ -2238,13 +2503,17 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 693,
       "margin_pct_2026": 0.33,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_won",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 132,
+      "shifted_to_ac_name": "DINDIGUL",
+      "shifted_to_party": "Dravida Munnetra Kazhagam",
+      "shifted_won": true
     },
     {
       "ac_no": 129,
@@ -2258,13 +2527,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 22368,
       "margin_pct_2026": 9.43,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 130,
@@ -2338,13 +2610,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 10063,
       "margin_pct_2026": 4.44,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 135,
@@ -2358,13 +2633,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 1821,
       "margin_pct_2026": 0.84,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 136,
@@ -2378,13 +2656,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 3503,
       "margin_pct_2026": 1.85,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 137,
@@ -2398,13 +2679,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 579,
       "margin_pct_2026": 0.28,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 138,
@@ -2418,13 +2702,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 1426,
       "margin_pct_2026": 0.59,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 139,
@@ -2438,13 +2725,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 33590,
       "margin_pct_2026": 13.17,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 208,
+      "shifted_to_ac_name": "TIRUCHULI",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 140,
@@ -2458,13 +2749,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 4786,
       "margin_pct_2026": 2.44,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 141,
@@ -2478,13 +2772,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 27416,
       "margin_pct_2026": 15.02,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 142,
@@ -2518,13 +2815,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 2739,
       "margin_pct_2026": 1.48,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 144,
@@ -2538,13 +2838,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 12364,
       "margin_pct_2026": 5.89,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 145,
@@ -2558,13 +2861,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 17442,
       "margin_pct_2026": 9.22,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 146,
@@ -2578,13 +2884,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 9614,
       "margin_pct_2026": 5.21,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 147,
@@ -2598,13 +2907,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 14393,
       "margin_pct_2026": 5.67,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 149,
@@ -2618,13 +2930,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 24498,
       "margin_pct_2026": 10.39,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 150,
@@ -2658,13 +2973,17 @@
       "winner_party_2026": "DMDK",
       "margin_2026": 2387,
       "margin_pct_2026": 1.14,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 125,
+      "shifted_to_ac_name": "UDUMALAIPETTAI",
+      "shifted_to_party": "All India Anna Dravida Munnetra Kazhagam",
+      "shifted_won": false
     },
     {
       "ac_no": 153,
@@ -2698,13 +3017,17 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 10663,
       "margin_pct_2026": 5.06,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 112,
+      "shifted_to_ac_name": "AVANASHI",
+      "shifted_to_party": "Bharatiya Janata Party",
+      "shifted_won": false
     },
     {
       "ac_no": 155,
@@ -2718,13 +3041,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 15519,
       "margin_pct_2026": 8.15,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 158,
@@ -2738,13 +3064,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 5747,
       "margin_pct_2026": 2.92,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 159,
@@ -2758,13 +3087,17 @@
       "winner_party_2026": "VCK",
       "margin_2026": 33063,
       "margin_pct_2026": 17.6,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 34,
+      "shifted_to_ac_name": "CHEYYUR",
+      "shifted_to_party": "Viduthalai Chiruthaigal Katchi",
+      "shifted_won": false
     },
     {
       "ac_no": 160,
@@ -2778,13 +3111,17 @@
       "winner_party_2026": "DMK",
       "margin_2026": 11417,
       "margin_pct_2026": 5.7,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_won",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 156,
+      "shifted_to_ac_name": "KURINJIPADI",
+      "shifted_to_party": "Dravida Munnetra Kazhagam",
+      "shifted_won": true
     },
     {
       "ac_no": 161,
@@ -2798,13 +3135,16 @@
       "winner_party_2026": "INC",
       "margin_2026": 10845,
       "margin_pct_2026": 5.75,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 163,
@@ -2818,13 +3158,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 9781,
       "margin_pct_2026": 6.46,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 164,
@@ -2838,13 +3181,16 @@
       "winner_party_2026": "CPI(M)",
       "margin_2026": 2278,
       "margin_pct_2026": 1.5,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 165,
@@ -2858,13 +3204,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 7331,
       "margin_pct_2026": 4.52,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 167,
@@ -2898,13 +3247,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 14116,
       "margin_pct_2026": 6.76,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 171,
@@ -2938,13 +3290,16 @@
       "winner_party_2026": "IUML",
       "margin_2026": 1065,
       "margin_pct_2026": 0.51,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 174,
@@ -2958,13 +3313,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 16955,
       "margin_pct_2026": 8.53,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 175,
@@ -2978,13 +3336,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 35028,
       "margin_pct_2026": 17.94,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 178,
@@ -3018,13 +3379,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 62073,
       "margin_pct_2026": 30.44,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 181,
@@ -3038,13 +3402,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 1492,
       "margin_pct_2026": 0.82,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 183,
@@ -3078,13 +3445,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 46074,
       "margin_pct_2026": 20.1,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 185,
@@ -3098,13 +3468,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 1,
       "margin_pct_2026": 0.0,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 186,
@@ -3118,13 +3491,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 15081,
       "margin_pct_2026": 7.04,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 187,
@@ -3158,13 +3534,16 @@
       "winner_party_2026": "INC",
       "margin_2026": 2724,
       "margin_pct_2026": 1.43,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 189,
@@ -3218,13 +3597,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 18038,
       "margin_pct_2026": 11.15,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 192,
@@ -3238,13 +3620,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 21529,
       "margin_pct_2026": 15.21,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 193,
@@ -3278,13 +3663,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 11931,
       "margin_pct_2026": 5.51,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 195,
@@ -3358,13 +3746,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 9554,
       "margin_pct_2026": 4.4,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 199,
@@ -3378,13 +3769,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 19321,
       "margin_pct_2026": 9.15,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 200,
@@ -3398,13 +3792,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 6805,
       "margin_pct_2026": 3.08,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 201,
@@ -3418,13 +3815,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 751,
       "margin_pct_2026": 0.36,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 107,
+      "shifted_to_ac_name": "BHAVANISAGAR",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 202,
@@ -3458,13 +3859,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 8581,
       "margin_pct_2026": 4.44,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 204,
@@ -3478,13 +3882,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 5989,
       "margin_pct_2026": 3.01,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 205,
@@ -3518,13 +3925,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 9391,
       "margin_pct_2026": 5.6,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 207,
@@ -3538,13 +3948,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 4943,
       "margin_pct_2026": 2.77,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 209,
@@ -3558,13 +3971,17 @@
       "winner_party_2026": "DMK",
       "margin_2026": 3548,
       "margin_pct_2026": 1.87,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 203,
+      "shifted_to_ac_name": "SRIVILLIPUTHUR",
+      "shifted_to_party": "Independent",
+      "shifted_won": false
     },
     {
       "ac_no": 210,
@@ -3598,13 +4015,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 8228,
       "margin_pct_2026": 4.71,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 214,
@@ -3638,13 +4058,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 1186,
       "margin_pct_2026": 0.67,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 217,
@@ -3658,13 +4081,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 29083,
       "margin_pct_2026": 14.83,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 218,
@@ -3698,13 +4124,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 6489,
       "margin_pct_2026": 3.3,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 220,
@@ -3718,13 +4147,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 6583,
       "margin_pct_2026": 3.47,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 221,
@@ -3758,13 +4190,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 10299,
       "margin_pct_2026": 4.38,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 224,
@@ -3778,13 +4213,17 @@
       "winner_party_2026": "TVK",
       "margin_2026": 11414,
       "margin_pct_2026": 5.23,
-      "situation": "did_not_contest_this_seat",
+      "situation": "shifted_and_lost",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": 204,
+      "shifted_to_ac_name": "SATTUR",
+      "shifted_to_party": "Bharatiya Janata Party",
+      "shifted_won": false
     },
     {
       "ac_no": 225,
@@ -3798,13 +4237,16 @@
       "winner_party_2026": "AIADMK",
       "margin_2026": 10245,
       "margin_pct_2026": 5.36,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 226,
@@ -3818,13 +4260,16 @@
       "winner_party_2026": "DMK",
       "margin_2026": 13805,
       "margin_pct_2026": 7.64,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 227,
@@ -3858,13 +4303,16 @@
       "winner_party_2026": "TVK",
       "margin_2026": 12313,
       "margin_pct_2026": 6.16,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 230,
@@ -3898,13 +4346,16 @@
       "winner_party_2026": "INC",
       "margin_2026": 2833,
       "margin_pct_2026": 1.42,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 232,
@@ -3918,13 +4369,16 @@
       "winner_party_2026": "CPI(M)",
       "margin_2026": 15569,
       "margin_pct_2026": 8.62,
-      "situation": "did_not_contest_this_seat",
+      "situation": "truly_out_of_contest",
       "incumbent_age": null,
       "incumbent_education": null,
       "incumbent_assets_lakh": null,
       "incumbent_2026_votes": null,
       "incumbent_2026_share": null,
-      "incumbent_2026_position": null
+      "incumbent_2026_position": null,
+      "shifted_to_ac": null,
+      "shifted_to_ac_name": null,
+      "shifted_won": null
     },
     {
       "ac_no": 233,
