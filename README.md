@@ -15,10 +15,12 @@ Schema documentation, sources, methodology, and known caveats are in **[`dashboa
 
 ## Web pages
 
-Self-contained HTML, no build step required:
+Plain HTML, no build step required:
 
-- **[`dashboard/candidates-dataset-2026.html`](dashboard/candidates-dataset-2026.html)** — data release page with download buttons, schemas, and caveats
-- **[`dashboard/dummy-candidates-2026.html`](dashboard/dummy-candidates-2026.html)** — interactive analysis of the dummy-pair dataset
+- **[`dashboard/candidates-dataset-2026.html`](dashboard/candidates-dataset-2026.html)**: data release page with download buttons, schemas, and caveats
+- **[`dashboard/tn-2026-explorer.html`](dashboard/tn-2026-explorer.html)**: the TN 2026 Explorer, covering results, swing, incumbents and the dummy near-misses ([live version](https://ndranandraj.com/election-dashboard/tn-2026-explorer.html)). It loads JSON from `dashboard/data/`, so serve the folder locally (`python3 -m http.server --directory dashboard`) rather than opening the file directly. The constituency map's boundary file is not in this repo, so the map section only renders on the live version.
+
+The original standalone dummy-pair dashboard is kept for reference in [`dashboard/_archive/dummy-candidates-2026.html`](dashboard/_archive/dummy-candidates-2026.html).
 
 ## Quick start
 
