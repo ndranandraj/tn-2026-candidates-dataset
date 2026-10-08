@@ -12,16 +12,29 @@
 <meta property="og:url" content="https://ndranandraj.com/election-dashboard/tn-2026-explorer.html">
 <meta name="twitter:card" content="summary_large_image">
 
+<script>
+// Theme bootstrap. Runs before first paint to avoid a flash of the wrong
+// theme. Reads the same localStorage key the blog's PaperMod toggle writes,
+// so the reader's choice on ndranandraj.com carries into this page.
+(function () {
+  var t = localStorage.getItem("pref-theme");
+  if (t !== "light" && t !== "dark") {
+    t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  document.documentElement.dataset.theme = t;
+})();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
 <style>
 :root {
   --bg: #0E0E14; --surface: #181820; --surface-2: #21212C; --border: #2E2E3D;
-  --text: #EEEDF6; --text-2: #B4B4C8; --text-3: #8888A2;
-  --accent: #F59E0B; --accent-soft: rgba(245,158,11,0.14);
+  --text: #EEEDF6; --text-2: #B4B4C8; --text-3: #9C9CB8;
+  --accent: #9a8bff; --accent-soft: rgba(154,139,255,0.14);
 
   /* Party colors — consistent across the whole explorer */
   --c-tvk:   #A855F7;
@@ -47,29 +60,75 @@
 
   --radius: 14px;
   --shadow: 0 2px 12px rgba(0,0,0,0.3);
+
+  /* Theme-dependent semantics (dark values; light overrides below) */
+  --neg: #FCA5A5;
+  --warn: #FCD34D;
+  --badge-muted-bg: rgba(255,255,255,.05);
+  --hair: rgba(255,255,255,.04);
+  --hover-soft: rgba(255,255,255,.04);
+  --nav-bg: rgba(14,14,20,0.88);
+  --map-bg: #08080F;
+  --tip-bg: #13131C;
+  --tip-name: #fff;
+  --hero-title-from: #fff;
+  --hero-grad-a: #161020;
+  --hero-grad-b: #0E0E14;
+  --sw-border: rgba(255,255,255,0.08);
+  --bar-track: rgba(255,255,255,0.06);
+  --center-mark: rgba(255,255,255,0.18);
+  --on-accent: #1a1408;
+}
+html[data-theme="light"] {
+  --bg: #FAF9F7; --surface: #FFFFFF; --surface-2: #F1EFE9; --border: #E4E1D8;
+  --text: #1C1917; --text-2: #57534E; --text-3: #79716B;
+  --accent: #5b5bd6; --accent-soft: rgba(91,91,214,0.10);
+  --shadow: 0 2px 12px rgba(28,25,23,0.08);
+
+  --neg: #B91C1C;
+  --warn: #92400E;
+  --badge-muted-bg: rgba(28,25,23,.06);
+  --hair: rgba(28,25,23,.07);
+  --hover-soft: rgba(28,25,23,.05);
+  --nav-bg: rgba(250,249,247,0.88);
+  --map-bg: #E9E7E1;
+  --tip-bg: #FFFFFF;
+  --tip-name: #1C1917;
+  --hero-title-from: #1C1917;
+  --hero-grad-a: #F3EFE7;
+  --hero-grad-b: #FAF9F7;
+  --sw-border: rgba(28,25,23,0.14);
+  --bar-track: rgba(28,25,23,0.08);
+  --center-mark: rgba(28,25,23,0.22);
+  --on-accent: #FFFFFF;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
   background: var(--bg); color: var(--text);
   line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-::selection { background: rgba(245,158,11,0.30); }
+::selection { background: rgba(154,139,255,0.30); }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
-code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+code, .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
 
 /* ── TOP NAV (sticky) ───────────────────────────────────────── */
 .top-nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 24px;
-  background: rgba(14,14,20,0.88);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   position: sticky; top: 0; z-index: 200;
+  transition: transform .25s ease;
 }
+/* Mobile: top nav slides away on scroll-down to free reading space;
+   the jump-nav takes its sticky slot. Driven by body.navhide (JS). */
+body.navhide .top-nav { transform: translateY(-100%); }
+body.navhide .jumpnav { top: 0; }
 .nav-brand {
   font-size: 0.76rem; font-weight: 700; letter-spacing: 0.10em;
   text-transform: uppercase; color: var(--text-3);
@@ -82,24 +141,32 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
   padding: 5px 12px; border-radius: 99px;
   background: var(--accent-soft);
-  border: 1px solid rgba(245,158,11,0.32); color: var(--accent);
+  border: 1px solid rgba(154,139,255,0.32); color: var(--accent);
 }
 .results-pill .blip { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); animation: blink 1.6s ease-in-out infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
 .nav-meta .home-link { font-size: 0.74rem; font-weight: 600; color: var(--text-3); }
 .nav-meta .home-link:hover { color: var(--text); text-decoration: none; }
+#theme-toggle {
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-2); border-radius: 99px;
+  width: 30px; height: 30px; line-height: 1; font-size: 0.95rem;
+  cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+  transition: all .18s ease;
+}
+#theme-toggle:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
 
 /* ── HERO ──────────────────────────────────────────────────── */
 .hero {
   padding: 56px 24px 36px; text-align: center;
-  background: linear-gradient(180deg, #161020 0%, #0E0E14 100%);
+  background: linear-gradient(180deg, var(--hero-grad-a) 0%, var(--hero-grad-b) 100%);
   position: relative; overflow: hidden;
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
   background:
     radial-gradient(ellipse 760px 460px at 30% 35%, rgba(168,85,247,0.10) 0%, transparent 65%),
-    radial-gradient(ellipse 620px 380px at 75% 60%, rgba(245,158,11,0.08) 0%, transparent 65%);
+    radial-gradient(ellipse 620px 380px at 75% 60%, rgba(154,139,255,0.08) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
@@ -110,10 +177,10 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   padding: 5px 15px; border-radius: 99px; margin-bottom: 18px;
 }
 .hero h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Newsreader', Georgia, serif;
   font-size: clamp(2.1rem, 5vw, 3.1rem);
   font-weight: 900; line-height: 1.10; margin-bottom: 14px;
-  background: linear-gradient(135deg, #fff 25%, var(--accent) 100%);
+  background: linear-gradient(135deg, var(--hero-title-from) 25%, var(--accent) 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -122,12 +189,15 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   color: var(--text-2); max-width: 680px; margin: 0 auto;
 }
 .hero .subtitle strong { color: var(--text); font-weight: 600; }
+.hero .provenance { font-size: 0.72rem; color: var(--text-3); margin-top: 14px; }
+.hero .provenance a { color: var(--text-2); text-decoration: underline; text-underline-offset: 2px; }
+.hero .provenance a:hover { color: var(--accent); }
 
 /* ── KPI STRIP (alliance + party headline) ─────────────────── */
 .kpi-strip {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 12px;
-  max-width: 1180px; margin: 30px auto -6px;
+  max-width: 1200px; margin: 30px auto -6px;
   padding: 0 20px; position: relative; z-index: 5;
 }
 .kpi {
@@ -136,7 +206,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   transition: transform .22s cubic-bezier(.2,.8,.2,1), border-color .22s;
   box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 8px 22px -16px rgba(0,0,0,0.55);
 }
-.kpi:hover { transform: translateY(-2px); border-color: rgba(245,158,11,0.34); }
+.kpi:hover { transform: translateY(-2px); border-color: rgba(154,139,255,0.34); }
 .kpi .num { font-size: 1.85rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .kpi .num.tvk  { color: var(--c-tvk); }
 .kpi .num.india{ color: var(--c-india); }
@@ -151,14 +221,15 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 /* ── JUMP NAV (sticky pill rail) ───────────────────────────── */
 .jumpnav {
   position: sticky; top: 56px; z-index: 100;
+  transition: top .25s ease;
   padding: 11px 0 13px;
-  background: linear-gradient(180deg, rgba(14,14,20,0.96) 0%, rgba(14,14,20,0.88) 100%);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(245,158,11,0.10);
+  border-bottom: 1px solid rgba(154,139,255,0.10);
 }
 .jumpnav-inner {
   display: flex; gap: 8px; align-items: center;
-  max-width: 1180px; margin: 0 auto; padding: 0 20px;
+  max-width: 1200px; margin: 0 auto; padding: 0 20px;
   overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
 .jumpnav-inner::-webkit-scrollbar { display: none; }
@@ -175,7 +246,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 .jumpnav-pill.soon::after { content: ' · soon'; opacity: .6; font-weight: 400; }
 
 /* ── CONTAINER + SECTION ───────────────────────────────────── */
-.container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .section { padding: 40px 0 8px; scroll-margin-top: 110px; }
 .section-header { position: relative; padding-top: 20px; margin-bottom: 18px; }
 .section-header::before {
@@ -185,7 +256,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   border-radius: 99px;
 }
 .section-header h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Newsreader', Georgia, serif;
   font-size: 1.55rem; font-weight: 800; margin-bottom: 6px; color: var(--text);
 }
 .section-header p { color: var(--text-2); font-size: 0.92rem; line-height: 1.65; max-width: 760px; }
@@ -208,35 +279,47 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 .map-controls .ctl.active { color: var(--text); border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
 .map-controls .ctl.party-active { color: #fff; }
 .map-controls .divider { width: 1px; height: 22px; background: var(--border); margin: 0 6px; }
-#map { width: 100%; height: 640px; border-radius: 10px; background: #08080F; }
+#map { width: 100%; height: 640px; border-radius: 10px; background: var(--map-bg); }
 
 /* ── Tooltip ─────────────────────────────────────────────── */
 .leaflet-tooltip.exp-tip {
-  background: #13131C !important; color: var(--text) !important;
-  border: 1.5px solid rgba(245,158,11,0.55) !important;
+  background: var(--tip-bg) !important; color: var(--text) !important;
+  border: 1.5px solid rgba(154,139,255,0.55) !important;
   border-radius: 12px !important;
   box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.4) !important;
   padding: 12px 16px !important;
   font-size: 0.84rem !important; line-height: 1.55 !important;
   min-width: 220px; pointer-events: none;
 }
-.exp-tip .tip-name { font-size: 0.96rem; font-weight: 800; color: #fff; display: block; margin-bottom: 2px; letter-spacing: -0.01em; }
+.exp-tip .tip-name { font-size: 0.96rem; font-weight: 800; color: var(--tip-name); display: block; margin-bottom: 2px; letter-spacing: -0.01em; }
 .exp-tip .tip-district { font-size: 0.72rem; color: var(--text-3); display: block; margin-bottom: 9px; }
 .exp-tip .tip-row { display: flex; justify-content: space-between; gap: 14px; font-size: 0.78rem; color: var(--text-2); padding: 2px 0; }
 .exp-tip .tip-row strong { color: var(--text); font-weight: 700; }
 .exp-tip .party-chip { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 0.70rem; font-weight: 800; color: #fff; letter-spacing: 0.03em; }
-.leaflet-tooltip-top.exp-tip:before { border-top-color: rgba(245,158,11,0.55); }
+.leaflet-tooltip-top.exp-tip:before { border-top-color: rgba(154,139,255,0.55); }
 
 /* ── LEGEND ────────────────────────────────────────────────── */
 .legend { display: flex; flex-wrap: wrap; gap: 14px 18px; margin-top: 14px; padding: 12px 16px;
   background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px;
   font-size: 0.80rem; align-items: center; }
 .legend .item { display: flex; align-items: center; gap: 7px; color: var(--text); font-weight: 500; }
-.legend .sw { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); }
+.legend .sw { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--sw-border); }
 .legend .h { color: var(--text-3); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.10em; font-weight: 700; margin-right: 4px; }
 
 /* ── TABLES ────────────────────────────────────────────────── */
-.table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow-x: auto; }
+.table-wrap { border: 1px solid var(--border); border-radius: var(--radius); overflow-x: auto;
+  /* Scroll-shadow edge hints: gradients signal more columns offscreen.
+     The "local" cover layers slide with the content and hide the hints
+     when there is nothing more to scroll. */
+  background:
+    linear-gradient(90deg, var(--surface) 35%, rgba(0,0,0,0)) left / 56px 100%,
+    linear-gradient(270deg, var(--surface) 35%, rgba(0,0,0,0)) right / 56px 100%,
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.30), transparent) left / 16px 100%,
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.30), transparent) right / 16px 100%,
+    var(--surface);
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll, scroll;
+}
 table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
 th { text-align: left; padding: 12px 14px; background: var(--surface-2);
   color: var(--text-2); font-size: 0.70rem; text-transform: uppercase;
@@ -247,11 +330,13 @@ td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--te
 td.right { text-align: right; font-variant-numeric: tabular-nums; }
 td.num { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; }
 tr:last-child td { border-bottom: none; }
-tr:hover td { background: rgba(245,158,11,0.04); }
+tr:hover td { background: rgba(154,139,255,0.04); }
 .party-chip {
   display: inline-block; padding: 2px 9px; border-radius: 99px;
   font-size: 0.70rem; font-weight: 800; color: #fff; letter-spacing: 0.02em;
 }
+/* In-body text links must be distinguishable without relying on colour alone. */
+.container p a, footer p a { text-decoration: underline; text-underline-offset: 2px; }
 .bar-cell { position: relative; min-width: 100px; }
 .bar-cell .bar { position: absolute; left: 0; top: 50%; transform: translateY(-50%);
   height: 22px; border-radius: 4px; opacity: 0.20; }
@@ -259,17 +344,17 @@ tr:hover td { background: rgba(245,158,11,0.04); }
 
 /* ── EFFICIENCY VISUAL ROW ───────────────────────────────── */
 .eff-ratio-bar { display: inline-block; width: 90px; height: 8px; border-radius: 99px;
-  background: rgba(255,255,255,0.06); position: relative; vertical-align: middle; margin-right: 6px; }
+  background: var(--bar-track); position: relative; vertical-align: middle; margin-right: 6px; }
 .eff-ratio-bar .fill { position: absolute; left: 50%; top: 0; height: 100%; border-radius: 99px; }
-.eff-ratio-bar .center-mark { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: rgba(255,255,255,0.18); }
+.eff-ratio-bar .center-mark { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--center-mark); }
 .eff-ratio { font-variant-numeric: tabular-nums; font-weight: 700; }
 .eff-ratio.over { color: var(--accent); }
-.eff-ratio.under { color: #FCA5A5; }
+.eff-ratio.under { color: var(--neg); }
 
 /* ── BANNERS / NOTES ─────────────────────────────────────── */
 .coming-soon {
-  background: linear-gradient(135deg, var(--accent-soft) 0%, rgba(245,158,11,0.05) 100%);
-  border: 1px dashed rgba(245,158,11,0.35);
+  background: linear-gradient(135deg, var(--accent-soft) 0%, rgba(154,139,255,0.05) 100%);
+  border: 1px dashed rgba(154,139,255,0.35);
   border-radius: 12px; padding: 22px 24px;
   color: var(--text-2); font-size: 0.92rem; line-height: 1.6;
 }
@@ -282,7 +367,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   background: var(--surface); border: 1px solid var(--border);
   text-decoration: none; color: var(--text); transition: all .2s;
 }
-.explore a:hover { transform: translateY(-2px); border-color: var(--accent); text-decoration: none; background: linear-gradient(180deg, var(--surface) 0%, rgba(245,158,11,0.04) 100%); }
+.explore a:hover { transform: translateY(-2px); border-color: var(--accent); text-decoration: none; background: linear-gradient(180deg, var(--surface) 0%, rgba(154,139,255,0.04) 100%); }
 .explore a strong { display: block; font-size: 0.96rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
 .explore a span { display: block; font-size: 0.82rem; color: var(--text-2); line-height: 1.5; }
 .explore a .ex-tag { display: inline-block; font-size: 0.60rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase;
@@ -294,10 +379,10 @@ tr:hover td { background: rgba(245,158,11,0.04); }
 .footer a { color: var(--text-2); }
 
 /* ── PARTY COLOR HELPERS ─────────────────────────────────── */
-.pc-tvk   { background: var(--c-tvk); }
+.pc-tvk   { background: color-mix(in srgb, var(--c-tvk) 82%, #000); }
 .pc-dmk   { background: var(--c-dmk); }
-.pc-admk  { background: var(--c-admk); }
-.pc-bjp   { background: var(--c-bjp); }
+.pc-admk  { background: color-mix(in srgb, var(--c-admk) 78%, #000); }
+.pc-bjp   { background: color-mix(in srgb, var(--c-bjp) 66%, #000); }
 .pc-pmk   { background: var(--c-pmk); color: #1f1f1f; }
 .pc-inc   { background: var(--c-inc); }
 .pc-ntk   { background: var(--c-ntk); }
@@ -317,10 +402,10 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   padding: 8px 16px; border-radius: 99px; cursor: pointer;
   font-family: inherit; transition: all .18s ease;
 }
-.cx-tab:hover { color: var(--text); background: rgba(255,255,255,.04); }
-.cx-tab.active { background: var(--accent); color: #1a1408; font-weight: 800; }
+.cx-tab:hover { color: var(--text); background: var(--hover-soft); }
+.cx-tab.active { background: var(--accent); color: var(--on-accent); font-weight: 800; }
 
-#cx-search:focus, #swing-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,158,11,.18); }
+#cx-search:focus, #swing-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(154,139,255,.18); }
 
 #cx-table th {
   text-align: left; padding: 11px 14px;
@@ -330,11 +415,11 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   cursor: pointer; user-select: none;
 }
 #cx-table th.right { text-align: right; }
-#cx-table th:hover { color: var(--text); background: rgba(245,158,11,.06); }
+#cx-table th:hover { color: var(--text); background: rgba(154,139,255,.06); }
 #cx-table th .sort-ind { color: var(--accent); margin-left: 4px; opacity: 0.85; font-size: 0.72rem; }
-#cx-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.04); color: var(--text); }
+#cx-table td { padding: 10px 14px; border-bottom: 1px solid var(--hair); color: var(--text); }
 #cx-table td.right { text-align: right; font-variant-numeric: tabular-nums; }
-#cx-table tr:hover td { background: rgba(245,158,11,.04); }
+#cx-table tr:hover td { background: rgba(154,139,255,.04); }
 #cx-table .ac-no { color: var(--text-3); font-weight: 600; font-variant-numeric: tabular-nums; }
 #cx-table .const-cell { font-weight: 700; }
 #cx-table .const-cell .dist { display: block; font-size: 0.72rem; color: var(--text-3); font-weight: 400; margin-top: 2px; }
@@ -346,7 +431,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   cursor: pointer; font-family: inherit; transition: all .15s ease;
 }
 .cx-pg-btn:hover:not(:disabled) { color: var(--text); border-color: var(--accent); }
-.cx-pg-btn.active { background: var(--accent); color: #1a1408; border-color: var(--accent); font-weight: 800; }
+.cx-pg-btn.active { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 800; }
 .cx-pg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
 @media (max-width: 720px) {
@@ -366,6 +451,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   <div class="nav-meta">
     <span class="results-pill"><span class="blip"></span>Results loaded · May 4, 2026</span>
     <a href="/" class="home-link">Home</a>
+    <button id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme"></button>
   </div>
 </nav>
 
@@ -377,6 +463,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
     <p class="subtitle">
       Every seat, every party, every region. <strong>234 constituencies</strong>, <strong>4.93 crore votes polled</strong>, <strong>12 parties with seats</strong>. The interactive companion to the five-post series on TN 2026.
     </p>
+    <p class="provenance">Source: official ECI results, May 4 2026 · 4,023 candidates across 234 seats · <a href="/data/tn-2026-candidates/">open dataset (CC BY 4.0)</a> · <a href="https://github.com/ndranandraj/tn-2026-candidates-dataset">GitHub</a></p>
   </div>
 </section>
 
@@ -423,13 +510,13 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       </div>
 
       <div class="cx-controls" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
-        <input id="cx-search" type="search" placeholder="Search constituency, district, candidate, party…"
+        <input id="cx-search" type="search" aria-label="Search the constituency table by constituency, district, candidate, or party" placeholder="Search constituency, district, candidate, party…"
                style="flex:1; min-width:260px; padding:10px 16px; border-radius:10px; border:1px solid var(--border);
                       background:var(--surface-2); color:var(--text); font-size:0.92rem; font-family:inherit;
                       outline:none;" />
         <div style="display:flex; gap:8px; align-items:center; font-size:.78rem; color:var(--text-2);">
           <span>Show</span>
-          <select id="cx-page-size" style="background:var(--surface-2); border:1px solid var(--border); color:var(--text); font-size:.78rem; padding:6px 10px; border-radius:8px; font-family:inherit; cursor:pointer;">
+          <select id="cx-page-size" aria-label="Rows per page" style="background:var(--surface-2); border:1px solid var(--border); color:var(--text); font-size:.78rem; padding:6px 10px; border-radius:8px; font-family:inherit; cursor:pointer;">
             <option value="25">25</option>
             <option value="50">50</option>
             <option value="100">100</option>
@@ -437,7 +524,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
           </select>
           <span>entries</span>
         </div>
-        <div id="cx-count" style="font-size:.78rem; color:var(--text-3); margin-left:auto;">—</div>
+        <div id="cx-count" role="status" aria-live="polite" style="font-size:.78rem; color:var(--text-3); margin-left:auto;">—</div>
       </div>
 
       <div style="overflow-x:auto;">
@@ -467,7 +554,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
     <div class="section-header">
       <span class="h-eyebrow">Section 1 · Interactive map</span>
       <h2>234 constituencies, colored by winner</h2>
-      <p>Hover any seat for the winning candidate, party, vote total, margin, and second-place finisher. Filter by alliance or by major party to see the geographic shape of each force.</p>
+      <p>Hover any seat for the winning candidate, party, vote total, margin, and second-place finisher. Filter by alliance or by major party to see the geographic shape of each force. Every figure shown on the map is also available in the searchable <a href="#explorer">Constituency Explorer table above</a>.</p>
     </div>
 
     <div class="map-wrap">
@@ -593,7 +680,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       <button class="ctl" data-swing-show="held">Held (70)</button>
       <div class="divider"></div>
       <span class="ctl-label">2026 winner</span>
-      <select id="swing-party-filter" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
+      <select id="swing-party-filter" aria-label="Filter the swing table by party" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
         <option value="all">Any</option>
         <option value="TVK">TVK</option>
         <option value="DMK">DMK</option>
@@ -604,23 +691,23 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       </select>
     </div>
     <div style="margin-bottom: 12px;">
-      <input id="swing-search" type="search" placeholder="Search constituency, district, region, candidate, party…"
+      <input id="swing-search" type="search" aria-label="Search the 2021 to 2026 swing table by constituency, district, region, candidate, or party" placeholder="Search constituency, district, region, candidate, party…"
              style="width:100%; padding:10px 16px; border-radius:10px; border:1px solid var(--border);
                     background:var(--surface-2); color:var(--text); font-size:0.92rem; font-family:inherit; outline:none;" />
     </div>
-    <div id="swing-count" style="font-size:.78rem; color:var(--text-3); margin-bottom:8px;">—</div>
+    <div id="swing-count" role="status" aria-live="polite" style="font-size:.78rem; color:var(--text-3); margin-bottom:8px;">—</div>
 
     <div class="table-wrap">
       <table id="swing-table">
         <thead>
           <tr>
-            <th data-sort="ac_no">AC</th>
-            <th data-sort="ac_name">Constituency</th>
-            <th data-sort="region">Region</th>
-            <th data-sort="winner_2021_party">2021 winner</th>
-            <th data-sort="winner_2026_party">2026 winner</th>
-            <th class="right" data-sort="margin_2026">2026 margin (%)</th>
-            <th>Flip</th>
+            <th scope="col" aria-sort="none" data-sort="ac_no">AC</th>
+            <th scope="col" aria-sort="none" data-sort="ac_name">Constituency</th>
+            <th scope="col" aria-sort="none" data-sort="region">Region</th>
+            <th scope="col" aria-sort="none" data-sort="winner_2021_party">2021 winner</th>
+            <th scope="col" aria-sort="none" data-sort="winner_2026_party">2026 winner</th>
+            <th scope="col" aria-sort="none" class="right" data-sort="margin_2026">2026 margin (%)</th>
+            <th scope="col">Flip</th>
           </tr>
         </thead>
         <tbody id="swing-body">
@@ -715,7 +802,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       <button class="ctl" data-inc-sit="all">All 179</button>
       <div class="divider"></div>
       <span class="ctl-label">2021 party</span>
-      <select id="inc-party-filter" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
+      <select id="inc-party-filter" aria-label="Filter the defeated-incumbents table by party" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
         <option value="all">Any</option>
         <option value="DMK">DMK</option>
         <option value="AIADMK">AIADMK</option>
@@ -732,12 +819,12 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       <table id="inc-table">
         <thead>
           <tr>
-            <th data-sort="ac_no">AC</th>
-            <th data-sort="incumbent_name">2021 winner (incumbent)</th>
-            <th data-sort="incumbent_2021_margin" class="right">2021 margin</th>
-            <th data-sort="winner_2026">2026 winner</th>
-            <th data-sort="margin_pct_2026" class="right">2026 margin (%)</th>
-            <th data-sort="situation">Situation</th>
+            <th scope="col" aria-sort="none" data-sort="ac_no">AC</th>
+            <th scope="col" aria-sort="none" data-sort="incumbent_name">2021 winner (incumbent)</th>
+            <th scope="col" aria-sort="none" data-sort="incumbent_2021_margin" class="right">2021 margin</th>
+            <th scope="col" aria-sort="none" data-sort="winner_2026">2026 winner</th>
+            <th scope="col" aria-sort="none" data-sort="margin_pct_2026" class="right">2026 margin (%)</th>
+            <th scope="col" aria-sort="none" data-sort="situation">Situation</th>
           </tr>
         </thead>
         <tbody id="inc-body">
@@ -835,6 +922,19 @@ tr:hover td { background: rgba(245,158,11,0.04); }
    Sections 3-7 placeholders; data sidecars ready for next session.
    ═══════════════════════════════════════════════════════════════════ */
 
+// ─── Cached JSON fetch ───
+// Several sections request the same sidecar: explorer_ac_2026.json is used by
+// the map, the 2021→2026 swing table, and the constituency explorer, and
+// swing_2021_to_2026.json by two sections. Cache the in-flight promise by URL
+// so each file is fetched at most once per page load instead of 2-3 times.
+const _jsonCache = new Map();
+function jget(url) {
+  if (!_jsonCache.has(url)) {
+    _jsonCache.set(url, fetch(url).then(r => r.ok ? r.json() : null).catch(() => null));
+  }
+  return _jsonCache.get(url);
+}
+
 // ─── Color tokens (read from CSS for single source of truth) ───
 const PARTY_COLOR = {
   'TVK':   getCss('--c-tvk'),
@@ -873,13 +973,34 @@ function pcClass(p) {
   };
   return map[p] || 'pc-other';
 }
+// Escape data-driven strings before interpolating into innerHTML templates.
+// All sidecar JSON is first-party, but candidate/constituency names come from
+// raw ECI CSV; this guards against stray markup characters in future refreshes.
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => (
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+  ));
+}
 
 // ─── MAP setup (defensive: only run if Leaflet loaded) ───
 let map = null;
 let perAc = {};          // ac_no -> map_data row
 let geoLayer = null;
+let tileBase = null;
+let tileLabels = null;
 let currentView = 'winner';   // 'winner' | 'alliance'
 let currentFilter = 'all';    // 'all' | party code | alliance code
+
+function isLightTheme() {
+  return document.documentElement.dataset.theme === 'light';
+}
+function tileUrls() {
+  return isLightTheme()
+    ? ['https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+       'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png']
+    : ['https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
+       'https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png'];
+}
 
 function initMap() {
   if (typeof L === 'undefined') {
@@ -891,18 +1012,22 @@ function initMap() {
     zoomControl: true, attributionControl: false, preferCanvas: true,
   }).setView([10.85, 78.6], 7);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+  const [baseUrl, labelsUrl] = tileUrls();
+  tileBase = L.tileLayer(baseUrl, {
     maxZoom: 12, minZoom: 6, attribution: '&copy; OpenStreetMap, &copy; CARTO',
   }).addTo(map);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+  tileLabels = L.tileLayer(labelsUrl, {
     maxZoom: 12, minZoom: 6,
   }).addTo(map);
   return true;
 }
 
 function styleFor(d) {
+  const light = isLightTheme();
   if (!d || !d.winner_party) {
-    return { fillColor: '#1a1a24', fillOpacity: 0.15, color: '#3a3a4a', weight: 0.6, dashArray: null };
+    return light
+      ? { fillColor: '#E2DFD7', fillOpacity: 0.5, color: '#C9C5BB', weight: 0.6, dashArray: null }
+      : { fillColor: '#1a1a24', fillOpacity: 0.15, color: '#3a3a4a', weight: 0.6, dashArray: null };
   }
   const winnerParty = d.winner_party;
   const winnerAlliance = d.winner_alliance || 'OTHERS';
@@ -916,7 +1041,7 @@ function styleFor(d) {
   return {
     fillColor: color,
     fillOpacity: filterMatch ? 0.86 : 0.10,
-    color: filterMatch ? '#fff' : '#2a2a3a',
+    color: filterMatch ? '#fff' : (light ? '#D6D2C8' : '#2a2a3a'),
     weight: filterMatch ? 1.0 : 0.4,
     dashArray: null,
   };
@@ -935,8 +1060,8 @@ function tooltipHTML(d, props) {
   const name = (d && d.ac_name) || props.AC_NAME || 'Unknown';
   const dist = (d && d.district) || props.DISTRICT || '';
   if (!d || !d.winner_party) {
-    return `<span class="tip-name">${name}</span>
-            <span class="tip-district">${dist}</span>
+    return `<span class="tip-name">${esc(name)}</span>
+            <span class="tip-district">${esc(dist)}</span>
             <div class="tip-row" style="font-style:italic;color:var(--text-3)">No 2026 result loaded</div>`;
   }
   const wp = d.winner_party;
@@ -948,13 +1073,13 @@ function tooltipHTML(d, props) {
   const scand = d.second_candidate || '?';
   const svotes = (d.second_votes != null ? d.second_votes.toLocaleString('en-IN') : '—');
   return `
-    <span class="tip-name">${name} · AC ${props.AC_NO}</span>
-    <span class="tip-district">${dist}${d.region ? ' · ' + d.region : ''}</span>
-    <div class="tip-row"><span>Winner</span><strong>${wcand}</strong></div>
-    <div class="tip-row"><span>Party</span><span class="party-chip ${pcClass(wp)}">${wp}</span></div>
+    <span class="tip-name">${esc(name)} · AC ${props.AC_NO}</span>
+    <span class="tip-district">${esc(dist)}${d.region ? ' · ' + esc(d.region) : ''}</span>
+    <div class="tip-row"><span>Winner</span><strong>${esc(wcand)}</strong></div>
+    <div class="tip-row"><span>Party</span><span class="party-chip ${pcClass(wp)}">${esc(wp)}</span></div>
     <div class="tip-row"><span>Winner votes</span><strong>${wvotes}</strong></div>
     <div class="tip-row"><span>Margin</span><strong>${margin != null && margin > 0 ? margin.toLocaleString('en-IN') : '—'} (${marginPct})</strong></div>
-    <div class="tip-row"><span>Runner-up</span><strong>${scand} <span style="opacity:.6">(${sp})</span></strong></div>
+    <div class="tip-row"><span>Runner-up</span><strong>${esc(scand)} <span style="opacity:.6">(${esc(sp)})</span></strong></div>
     <div class="tip-row"><span>Runner-up votes</span><strong>${svotes}</strong></div>`;
 }
 
@@ -963,7 +1088,7 @@ async function loadMap() {
   const geo = await fetch('tn_constituencies.geojson').then(r => r.json());
   try {
     // explorer_ac_2026.json is built fresh from raw ECI CSV — authoritative source.
-    const data = await fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null);
+    const data = await jget('data/explorer_ac_2026.json');
     if (data && data.per_ac) {
       data.per_ac.forEach(d => { perAc[d.ac_no] = d; });
     }
@@ -1004,6 +1129,39 @@ document.querySelectorAll('.map-controls .ctl[data-filter]').forEach(b => {
   });
 });
 
+// ─── THEME TOGGLE (syncs with the blog via localStorage "pref-theme") ───
+function updateToggleIcon() {
+  const b = document.getElementById('theme-toggle');
+  if (b) b.textContent = isLightTheme() ? '☾' : '☀';  // icon shows the theme you'd switch to
+}
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const next = isLightTheme() ? 'dark' : 'light';
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem('pref-theme', next);
+  // CSS variables update instantly; the map needs explicit help.
+  if (map && tileBase) {
+    const [baseUrl, labelsUrl] = tileUrls();
+    tileBase.setUrl(baseUrl);
+    tileLabels.setUrl(labelsUrl);
+  }
+  restyle();
+  updateToggleIcon();
+});
+updateToggleIcon();
+
+// ─── Mobile: auto-hide top nav on scroll-down, reveal on scroll-up ───
+(function () {
+  const mq = window.matchMedia('(max-width: 720px)');
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (!mq.matches) { document.body.classList.remove('navhide'); lastY = window.scrollY; return; }
+    const y = window.scrollY;
+    if (y > lastY + 4 && y > 160) document.body.classList.add('navhide');
+    else if (y < lastY - 4) document.body.classList.remove('navhide');
+    lastY = y;
+  }, { passive: true });
+})();
+
 function updateLegend() {
   const legend = document.getElementById('legend');
   if (currentView === 'alliance') {
@@ -1033,7 +1191,7 @@ function updateLegend() {
 // ─── PARTY EFFICIENCY ───
 async function loadEfficiency() {
   try {
-    const eff = await fetch('data/party_efficiency_2026.json').then(r => r.ok ? r.json() : null);
+    const eff = await jget('data/party_efficiency_2026.json');
     if (!eff) return;
     const tbody = document.getElementById('eff-body');
     // Sort by seats desc, then by vote share desc
@@ -1046,9 +1204,9 @@ async function loadEfficiency() {
       const t = Math.min(1, Math.abs(ratio - 1) / (maxRatio - 1));
       const fillW = (t * 45).toFixed(1);
       const fillLeft = ratio >= 1 ? '50%' : (50 - parseFloat(fillW)) + '%';
-      const fillColor = ratio >= 1 ? 'var(--accent)' : '#FCA5A5';
+      const fillColor = ratio >= 1 ? 'var(--accent)' : 'var(--neg)';
       return `<tr>
-        <td><span class="party-chip ${pcClass(p.party)}">${p.party}</span></td>
+        <td><span class="party-chip ${pcClass(p.party)}">${esc(p.party)}</span></td>
         <td class="right num">${p.votes.toLocaleString('en-IN')}</td>
         <td class="right num">${p.vote_pct.toFixed(2)}%</td>
         <td class="right num">${p.seats}</td>
@@ -1064,7 +1222,7 @@ async function loadEfficiency() {
     }).join('');
   } catch (e) {
     document.getElementById('eff-body').innerHTML =
-      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load party_efficiency_2026.json: ${e.message}</td></tr>`;
+      `<tr><td colspan="6" style="text-align:center;padding:32px;color:var(--neg);">Could not load party_efficiency_2026.json: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1091,13 +1249,13 @@ let regViewMode = 'combined';
 
 async function loadRegional() {
   try {
-    const data = await fetch('data/regional_all_parties_2026.json').then(r => r.ok ? r.json() : null);
+    const data = await jget('data/regional_all_parties_2026.json');
     if (!data) throw new Error('null');
     regionalData = data;
     renderRegional();
   } catch (e) {
     document.getElementById('reg-body').innerHTML =
-      `<tr><td colspan="10" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load regional sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="10" style="text-align:center;padding:32px;color:var(--neg);">Could not load regional sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1122,7 +1280,7 @@ function renderRegional() {
       return `<td class="right num">${inner}</td>`;
     }).join('');
     return `<tr>
-      <td><strong>${reg.region}</strong></td>
+      <td><strong>${esc(reg.region)}</strong></td>
       <td class="right num">${reg.acs}</td>
       ${cells}
     </tr>`;
@@ -1175,8 +1333,8 @@ let swingSortDir = 1;
 async function loadSwing() {
   try {
     const [swing, expAc] = await Promise.all([
-      fetch('data/swing_2021_to_2026.json').then(r => r.ok ? r.json() : null),
-      fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null),
+      jget('data/swing_2021_to_2026.json'),
+      jget('data/explorer_ac_2026.json'),
     ]);
     if (!swing || !swing.rows) throw new Error('swing sidecar missing');
     swingData = swing.rows;
@@ -1186,7 +1344,7 @@ async function loadSwing() {
     renderSwing();
   } catch (e) {
     document.getElementById('swing-body').innerHTML =
-      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load swing sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--neg);">Could not load swing sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1242,14 +1400,14 @@ function renderSwing() {
     const marStr = mar && mar.margin_pct ?
       `${mar.margin.toLocaleString('en-IN')} <span style="color:var(--text-2);font-size:.78rem;">(${mar.margin_pct.toFixed(2)}%)</span>` : '—';
     const flipBadge = r.flipped
-      ? `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:800;background:rgba(245,158,11,.18);color:var(--accent);letter-spacing:.04em;">FLIPPED</span>`
-      : `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:700;background:rgba(255,255,255,.05);color:var(--text-3);letter-spacing:.04em;">HELD</span>`;
+      ? `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:800;background:rgba(154,139,255,.18);color:var(--accent);letter-spacing:.04em;">FLIPPED</span>`
+      : `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:700;background:var(--badge-muted-bg);color:var(--text-3);letter-spacing:.04em;">HELD</span>`;
     return `<tr>
       <td class="num">${r.ac_no}</td>
-      <td>${r.ac_name}<br><span style="font-size:.72rem;color:var(--text-3)">${r.district}</span></td>
-      <td style="font-size:.82rem;color:var(--text-2)">${r.region}</td>
-      <td><span class="party-chip ${pcClass(wp21)}">${wp21}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2021.share.toFixed(1)}%</span></td>
-      <td><span class="party-chip ${pcClass(wp26)}">${wp26}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2026.share.toFixed(1)}%</span></td>
+      <td>${esc(r.ac_name)}<br><span style="font-size:.72rem;color:var(--text-3)">${esc(r.district)}</span></td>
+      <td style="font-size:.82rem;color:var(--text-2)">${esc(r.region)}</td>
+      <td><span class="party-chip ${pcClass(wp21)}">${esc(wp21)}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2021.share.toFixed(1)}%</span></td>
+      <td><span class="party-chip ${pcClass(wp26)}">${esc(wp26)}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2026.share.toFixed(1)}%</span></td>
       <td class="right num">${marStr}</td>
       <td>${flipBadge}</td>
     </tr>`;
@@ -1284,8 +1442,10 @@ document.querySelectorAll('#swing-table th[data-sort]').forEach(th => {
     else { swingSortKey = k; swingSortDir = (k === 'margin_2026') ? -1 : 1; }
     document.querySelectorAll('#swing-table th[data-sort]').forEach(t => {
       t.innerHTML = t.innerHTML.replace(/ [▼▲]$/, '');
+      t.setAttribute('aria-sort', 'none');
     });
     th.innerHTML = th.innerHTML.replace(/ [▼▲]$/, '') + (swingSortDir > 0 ? ' ▲' : ' ▼');
+    th.setAttribute('aria-sort', swingSortDir > 0 ? 'ascending' : 'descending');
     renderSwing();
   });
 });
@@ -1293,7 +1453,7 @@ document.querySelectorAll('#swing-table th[data-sort]').forEach(th => {
 // ─── SECTION 5 · Demographics ───
 async function loadDemographics() {
   try {
-    const d = await fetch('data/new_assembly_profile_2026.json').then(r => r.ok ? r.json() : null);
+    const d = await jget('data/new_assembly_profile_2026.json');
     if (!d) throw new Error('null');
     const o = d.overall;
     document.getElementById('dm-median-age').textContent = o.median_age + 'y';
@@ -1311,7 +1471,7 @@ async function loadDemographics() {
       const womenStr = p.women > 0 ? `${p.women} <span style="color:var(--text-3);font-size:.76rem;">(${p.women_pct.toFixed(1)}%)</span>` : '<span style="color:var(--text-3)">0</span>';
       const assets = p.median_assets_lakh != null ? `₹${p.median_assets_lakh.toFixed(0)}L` : '—';
       return `<tr>
-        <td><span class="party-chip ${pcClass(partyCode)}">${p.party}</span></td>
+        <td><span class="party-chip ${pcClass(partyCode)}">${esc(p.party)}</span></td>
         <td class="right num">${p.seats}</td>
         <td class="right num">${p.median_age}y</td>
         <td class="right num">${p.under_40}</td>
@@ -1326,18 +1486,19 @@ async function loadDemographics() {
     document.getElementById('dm-young-body').innerHTML = young.map(y => {
       const partyCode = y.party === 'AIADMK' ? 'ADMK' : y.party;
       const gender = y.gender === 'F' ? '♀' : (y.gender === 'M' ? '♂' : y.gender || '?');
+      const genderLabel = y.gender === 'F' ? 'Female' : (y.gender === 'M' ? 'Male' : 'Not recorded');
       return `<tr>
-        <td><strong>${y.name}</strong></td>
+        <td><strong>${esc(y.name)}</strong></td>
         <td class="right num"><span style="font-size:1.05rem;font-weight:700;color:var(--accent)">${y.age}</span></td>
-        <td>${y.ac}</td>
-        <td><span class="party-chip ${pcClass(partyCode)}">${y.party}</span></td>
-        <td style="text-align:center;font-size:1.0rem;">${gender}</td>
-        <td style="font-size:.82rem;color:var(--text-2);">${y.education || '—'}</td>
+        <td>${esc(y.ac)}</td>
+        <td><span class="party-chip ${pcClass(partyCode)}">${esc(y.party)}</span></td>
+        <td style="text-align:center;font-size:1.0rem;"><span role="img" aria-label="${genderLabel}" title="${genderLabel}">${esc(gender)}</span></td>
+        <td style="font-size:.82rem;color:var(--text-2);">${y.education ? esc(y.education) : '—'}</td>
       </tr>`;
     }).join('');
   } catch (e) {
     document.getElementById('dm-party-body').innerHTML =
-      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load demographics sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--neg);">Could not load demographics sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1350,13 +1511,13 @@ let incSortDir = -1;
 
 async function loadIncumbents() {
   try {
-    const d = await fetch('data/defeated_incumbents_2026.json').then(r => r.ok ? r.json() : null);
+    const d = await jget('data/defeated_incumbents_2026.json');
     if (!d || !d.rows) throw new Error('null');
     incData = d.rows;
     renderIncumbents();
   } catch (e) {
     document.getElementById('inc-body').innerHTML =
-      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load incumbents sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="6" style="text-align:center;padding:32px;color:var(--neg);">Could not load incumbents sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1367,9 +1528,9 @@ const SITUATION_LABEL = {
   shifted_and_won: 'Shifted seat & won',
 };
 const SITUATION_COLOR = {
-  contested_and_lost: '#FCA5A5',
+  contested_and_lost: 'var(--neg)',
   truly_out_of_contest: 'var(--text-3)',
-  shifted_and_lost: '#FCD34D',
+  shifted_and_lost: 'var(--warn)',
   shifted_and_won: 'var(--accent)',
 };
 
@@ -1401,17 +1562,17 @@ function renderIncumbents() {
       : '—';
     const sit = SITUATION_LABEL[r.situation] || r.situation;
     const sitColor = SITUATION_COLOR[r.situation] || 'var(--text-2)';
-    const stalinTag = is_stalin ? ' <span style="font-size:.62rem;font-weight:800;letter-spacing:.06em;color:#FCD34D;background:rgba(252,211,77,.16);padding:2px 7px;border-radius:99px;margin-left:6px;">CHIEF MINISTER</span>' : '';
+    const stalinTag = is_stalin ? ' <span style="font-size:.62rem;font-weight:800;letter-spacing:.06em;color:var(--warn);background:rgba(252,211,77,.16);padding:2px 7px;border-radius:99px;margin-left:6px;">CHIEF MINISTER</span>' : '';
     const rowStyle = is_stalin ? 'background:rgba(252,211,77,0.04);' : '';
     return `<tr style="${rowStyle}">
       <td class="num">${r.ac_no}</td>
-      <td><strong>${r.incumbent_name}</strong>${stalinTag}<br>
-          <span style="font-size:.72rem;color:var(--text-3)">${r.ac_name} · ${r.district}</span><br>
-          <span class="party-chip ${pcClass(wp21)}" style="margin-top:4px;">${r.incumbent_party_2021}</span></td>
+      <td><strong>${esc(r.incumbent_name)}</strong>${stalinTag}<br>
+          <span style="font-size:.72rem;color:var(--text-3)">${esc(r.ac_name)} · ${esc(r.district)}</span><br>
+          <span class="party-chip ${pcClass(wp21)}" style="margin-top:4px;">${esc(r.incumbent_party_2021)}</span></td>
       <td class="right num">+${mar21}</td>
-      <td>${r.winner_2026 || '—'}<br><span class="party-chip ${pcClass(wp26)}" style="margin-top:3px;">${r.winner_party_2026 || '?'}</span></td>
+      <td>${r.winner_2026 ? esc(r.winner_2026) : '—'}<br><span class="party-chip ${pcClass(wp26)}" style="margin-top:3px;">${r.winner_party_2026 ? esc(r.winner_party_2026) : '?'}</span></td>
       <td class="right num">${mar26}</td>
-      <td style="color:${sitColor};font-weight:600;font-size:.82rem;">${sit}</td>
+      <td style="color:${sitColor};font-weight:600;font-size:.82rem;">${esc(sit)}</td>
     </tr>`;
   }).join('');
 }
@@ -1436,8 +1597,10 @@ document.querySelectorAll('#inc-table th[data-sort]').forEach(th => {
     else { incSortKey = k; incSortDir = (k === 'incumbent_2021_margin' || k === 'margin_pct_2026') ? -1 : 1; }
     document.querySelectorAll('#inc-table th[data-sort]').forEach(t => {
       t.innerHTML = t.innerHTML.replace(/ [▼▲]$/, '');
+      t.setAttribute('aria-sort', 'none');
     });
     th.innerHTML = th.innerHTML.replace(/ [▼▲]$/, '') + (incSortDir > 0 ? ' ▲' : ' ▼');
+    th.setAttribute('aria-sort', incSortDir > 0 ? 'ascending' : 'descending');
     renderIncumbents();
   });
 });
@@ -1445,7 +1608,7 @@ document.querySelectorAll('#inc-table th[data-sort]').forEach(th => {
 // ─── SECTION 7 · Dummy near-misses ───
 async function loadDummies() {
   try {
-    const rows = await fetch('data/dummy_near_misses_2026.json').then(r => r.ok ? r.json() : null);
+    const rows = await jget('data/dummy_near_misses_2026.json');
     if (!Array.isArray(rows)) throw new Error('not an array');
     const tbody = document.getElementById('dum-body');
     tbody.innerHTML = rows.map((r, i) => {
@@ -1453,28 +1616,28 @@ async function loadDummies() {
       const won = String(r.major_won).toLowerCase() === 'true';
       const status = won
         ? `<span style="color:var(--accent);font-weight:700;">WON</span>`
-        : `<span style="color:#FCA5A5;font-weight:700;">LOST</span>`;
+        : `<span style="color:var(--neg);font-weight:700;">LOST</span>`;
       // Flag tier: prefer exact > near > word
       let tier = 'WORD';
       let tierColor = 'var(--text-3)';
-      if (parseInt(r.exact_count) > 0) { tier = 'EXACT'; tierColor = '#FCA5A5'; }
-      else if (parseInt(r.near_count) > 0) { tier = 'NEAR'; tierColor = '#FCD34D'; }
+      if (parseInt(r.exact_count) > 0) { tier = 'EXACT'; tierColor = 'var(--neg)'; }
+      else if (parseInt(r.near_count) > 0) { tier = 'NEAR'; tierColor = 'var(--warn)'; }
       const ratio = r.dummy_to_margin_ratio;
-      const ratioColor = ratio >= 1.5 ? '#FCA5A5' : ratio >= 1.0 ? 'var(--accent)' : 'var(--text-2)';
+      const ratioColor = ratio >= 1.5 ? 'var(--neg)' : ratio >= 1.0 ? 'var(--accent)' : 'var(--text-2)';
       return `<tr>
         <td class="num"><strong>${i + 1}</strong></td>
-        <td><strong>${r.constituency}</strong><br><span style="font-size:.72rem;color:var(--text-3)">AC ${r.ac_no}</span></td>
-        <td>${r.major_candidate}<br><span class="party-chip ${pcClass(partyCode)}" style="margin-top:3px;">${r.major_party}</span> · ${status}</td>
+        <td><strong>${esc(r.constituency)}</strong><br><span style="font-size:.72rem;color:var(--text-3)">AC ${r.ac_no}</span></td>
+        <td>${esc(r.major_candidate)}<br><span class="party-chip ${pcClass(partyCode)}" style="margin-top:3px;">${esc(r.major_party)}</span> · ${status}</td>
         <td class="right num">${parseInt(r.margin_of_loss).toLocaleString('en-IN')}</td>
         <td class="right num">${(r.margin_pct).toFixed(2)}%</td>
         <td class="right num">${parseInt(r.combined_dummy_votes).toLocaleString('en-IN')}</td>
         <td class="right num" style="color:${ratioColor};font-weight:800;">${ratio.toFixed(2)}×</td>
-        <td><span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.66rem;font-weight:800;letter-spacing:.04em;background:rgba(255,255,255,.05);color:${tierColor};border:1px solid ${tierColor === 'var(--text-3)' ? 'var(--border)' : tierColor};">${tier}</span></td>
+        <td><span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.66rem;font-weight:800;letter-spacing:.04em;background:var(--badge-muted-bg);color:${tierColor};border:1px solid ${tierColor === 'var(--text-3)' ? 'var(--border)' : tierColor};">${tier}</span></td>
       </tr>`;
     }).join('');
   } catch (e) {
     document.getElementById('dum-body').innerHTML =
-      `<tr><td colspan="8" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load dummies sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="8" style="text-align:center;padding:32px;color:var(--neg);">Could not load dummies sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1549,11 +1712,12 @@ const CX = {
 
 async function cxLoadAll() {
   try {
-    const [w26, w21, sw, all] = await Promise.all([
-      fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null),
-      fetch('data/winners_2021.json').then(r => r.ok ? r.json() : null),
-      fetch('data/swing_2021_to_2026.json').then(r => r.ok ? r.json() : null),
-      fetch('data/all_candidates_2026.json').then(r => r.ok ? r.json() : null),
+    // all_candidates_2026.json (672 KB) is deliberately NOT loaded here;
+    // cxEnsureAllCandidates() fetches it the first time the tab is opened.
+    const [w26, w21, sw] = await Promise.all([
+      jget('data/explorer_ac_2026.json'),
+      jget('data/winners_2021.json'),
+      jget('data/swing_2021_to_2026.json'),
     ]);
     CX.data.winners_2026 = (w26 && w26.per_ac) ? w26.per_ac : [];
     CX.data.winners_2021 = (w21 && w21.rows) ? w21.rows : [];
@@ -1563,11 +1727,28 @@ async function cxLoadAll() {
       w26_name: r.winner_2026.candidate, w26_party: r.winner_2026.party,
       flipped: r.flipped,
     })) : [];
-    CX.data.all_2026 = (all && all.rows) ? all.rows.filter(r => r.party !== 'NOTA') : [];
     cxRender();
   } catch (e) {
     document.getElementById('cx-body').innerHTML =
-      `<tr><td colspan="9" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load: ${e.message}</td></tr>`;
+      `<tr><td colspan="9" style="text-align:center;padding:32px;color:var(--neg);">Could not load: ${esc(e.message)}</td></tr>`;
+  }
+}
+
+let cxAllLoading = false;
+async function cxEnsureAllCandidates() {
+  if (CX.data.all_2026 || cxAllLoading) return;
+  cxAllLoading = true;
+  document.getElementById('cx-body').innerHTML =
+    `<tr><td colspan="9" style="text-align:center;padding:32px;color:var(--text-3);">Loading all candidate rows…</td></tr>`;
+  try {
+    const all = await jget('data/all_candidates_2026.json');
+    CX.data.all_2026 = (all && all.rows) ? all.rows.filter(r => r.party !== 'NOTA') : [];
+  } catch (e) {
+    CX.data.all_2026 = [];
+    console.error('All-candidates load failed:', e);
+  } finally {
+    cxAllLoading = false;
+    if (CX.tab === 'all_2026') cxRender();
   }
 }
 
@@ -1580,7 +1761,8 @@ function cxRender() {
   head.innerHTML = '<tr>' + schema.columns.map(col => {
     const isSorted = CX.sortKey === col.key;
     const ind = isSorted ? `<span class="sort-ind">${CX.sortDir > 0 ? '▲' : '▼'}</span>` : '';
-    return `<th class="${col.cls || ''}" data-key="${col.key}" ${col.width ? `style="width:${col.width}"` : ''}>${col.label}${ind}</th>`;
+    const ariaSort = isSorted ? (CX.sortDir > 0 ? 'ascending' : 'descending') : 'none';
+    return `<th scope="col" aria-sort="${ariaSort}" class="${col.cls || ''}" data-key="${col.key}" ${col.width ? `style="width:${col.width}"` : ''}>${col.label}${ind}</th>`;
   }).join('') + '</tr>';
   head.querySelectorAll('th').forEach(th => {
     th.addEventListener('click', () => {
@@ -1617,9 +1799,13 @@ function cxRender() {
     return sortDir * (ka - kb);
   });
 
-  // Paginate
+  // Paginate. "All" on the candidates tab is capped: rendering 4,000+ rows
+  // in one pass janks mobile browsers, so it pages in chunks of 500 instead.
+  const ALL_CAP = 500;
   const total = filtered.length;
-  const pageSize = CX.pageSize === 'all' ? total : CX.pageSize;
+  let pageSize = CX.pageSize === 'all' ? total : CX.pageSize;
+  let capped = false;
+  if (CX.pageSize === 'all' && total > ALL_CAP) { pageSize = ALL_CAP; capped = true; }
   const totalPages = pageSize ? Math.max(1, Math.ceil(total / pageSize)) : 1;
   if (CX.page > totalPages) CX.page = totalPages;
   const start = (CX.page - 1) * pageSize;
@@ -1628,7 +1814,8 @@ function cxRender() {
 
   // Counts
   document.getElementById('cx-count').textContent =
-    `Showing ${total ? start + 1 : 0} to ${end} of ${total.toLocaleString('en-IN')} entries`;
+    `Showing ${total ? start + 1 : 0} to ${end} of ${total.toLocaleString('en-IN')} entries` +
+    (capped ? ' · large lists page 500 at a time, use search to narrow' : '');
 
   // Body
   const tbody = document.getElementById('cx-body');
@@ -1651,7 +1838,7 @@ function cxRender() {
 function cxFormatCell(col, v, row) {
   if (col.type === 'num') {
     if (v == null) return '<span style="color:var(--text-3)">—</span>';
-    return `<span class="num">${typeof v === 'number' ? v.toLocaleString('en-IN') : v}</span>`;
+    return `<span class="num">${typeof v === 'number' ? v.toLocaleString('en-IN') : esc(v)}</span>`;
   }
   if (col.type === 'pct') {
     if (v == null || isNaN(v)) return '<span style="color:var(--text-3)">—</span>';
@@ -1660,32 +1847,32 @@ function cxFormatCell(col, v, row) {
   if (col.type === 'party') {
     if (!v) return '<span style="color:var(--text-3)">—</span>';
     const partyCode = v === 'AIADMK' ? 'ADMK' : v;
-    return `<span class="party-chip ${pcClass(partyCode)}">${v}</span>`;
+    return `<span class="party-chip ${pcClass(partyCode)}">${esc(v)}</span>`;
   }
   if (col.type === 'const') {
-    const dist = row.district ? `<span class="dist">${row.district}</span>` : '';
-    return `<span class="const-cell">${v || '—'}${dist}</span>`;
+    const dist = row.district ? `<span class="dist">${esc(row.district)}</span>` : '';
+    return `<span class="const-cell">${v ? esc(v) : '—'}${dist}</span>`;
   }
   if (col.type === 'cand') {
-    return `<span class="cand-cell">${v || '—'}</span>`;
+    return `<span class="cand-cell">${v ? esc(v) : '—'}</span>`;
   }
   if (col.type === 'flip') {
     return v
-      ? `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:800;letter-spacing:.04em;background:rgba(245,158,11,.18);color:var(--accent);">FLIPPED</span>`
-      : `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,.05);color:var(--text-3);">HELD</span>`;
+      ? `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:800;letter-spacing:.04em;background:rgba(154,139,255,.18);color:var(--accent);">FLIPPED</span>`
+      : `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:700;letter-spacing:.04em;background:var(--badge-muted-bg);color:var(--text-3);">HELD</span>`;
   }
   if (col.type === 'bool') {
     return v
       ? `<span style="color:var(--accent);font-weight:800;">✓</span>`
       : `<span style="color:var(--text-3);">—</span>`;
   }
-  return v != null ? String(v) : '<span style="color:var(--text-3)">—</span>';
+  return v != null ? esc(v) : '<span style="color:var(--text-3)">—</span>';
 }
 
 function cxRenderPager(total, totalPages) {
   const info = document.getElementById('cx-pager-info');
   const buttons = document.getElementById('cx-pager-buttons');
-  if (CX.pageSize === 'all' || totalPages <= 1) {
+  if (totalPages <= 1) {   // capped "all" lists still need the pager
     info.textContent = '';
     buttons.innerHTML = '';
     return;
@@ -1728,7 +1915,11 @@ document.querySelectorAll('.cx-tab').forEach(b => {
     CX.tab = b.dataset.tab;
     CX.page = 1;
     CX.sortKey = null;
-    cxRender();
+    if (CX.tab === 'all_2026' && !CX.data.all_2026) {
+      cxEnsureAllCandidates();   // shows its own loading row, renders when done
+    } else {
+      cxRender();
+    }
   });
 });
 
@@ -1751,8 +1942,24 @@ document.getElementById('cx-page-size').addEventListener('change', e => {
 });
 
 // ─── Boot (each section catches its own errors so one failure doesn't break the page) ───
-const mapOk = initMap();
-if (mapOk) loadMap().catch(e => console.error('Map load failed:', e));
+// Lazy map: the 888 KB GeoJSON and Leaflet setup wait until the map section
+// approaches the viewport, so first paint isn't blocked for readers who
+// stay in the Constituency Explorer at the top.
+let mapStarted = false;
+function startMap() {
+  if (mapStarted) return;
+  mapStarted = true;
+  const mapOk = initMap();
+  if (mapOk) loadMap().catch(e => console.error('Map load failed:', e));
+}
+if ('IntersectionObserver' in window) {
+  const mapObserver = new IntersectionObserver((entries, obs) => {
+    if (entries.some(en => en.isIntersecting)) { startMap(); obs.disconnect(); }
+  }, { rootMargin: '600px 0px' });
+  mapObserver.observe(document.getElementById('map-section'));
+} else {
+  startMap();
+}
 loadEfficiency().catch(e => console.error('Eff load failed:', e));
 loadRegional().catch(e => console.error('Regional load failed:', e));
 loadSwing().catch(e => console.error('Swing load failed:', e));
