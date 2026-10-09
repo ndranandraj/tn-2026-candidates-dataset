@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T20:28:04+05:30",
+  "generated_at": "2026-10-09T20:49:39+05:30",
   "source": "https://results.eci.gov.in/ResultAcByeOct2026/",
   "baseline_sources": [
     "raw/free_sources/tn_2026_results.csv",
@@ -102,24 +102,13 @@
           "alliance": ""
         },
         {
-          "name": "NOTA",
-          "party": "None of the Above",
-          "party_code": "NOTA",
-          "evm": 652,
-          "postal": 0,
-          "total": 652,
-          "position": 7,
-          "pct": 0.35,
-          "alliance": ""
-        },
-        {
           "name": "P.N.R.BASKARAN",
           "party": "Independent",
           "party_code": "IND",
           "evm": 497,
           "postal": 0,
           "total": 497,
-          "position": 8,
+          "position": 7,
           "pct": 0.27,
           "alliance": ""
         },
@@ -130,7 +119,7 @@
           "evm": 410,
           "postal": 0,
           "total": 410,
-          "position": 9,
+          "position": 8,
           "pct": 0.22,
           "alliance": ""
         },
@@ -141,7 +130,7 @@
           "evm": 350,
           "postal": 3,
           "total": 353,
-          "position": 10,
+          "position": 9,
           "pct": 0.19,
           "alliance": ""
         },
@@ -152,7 +141,7 @@
           "evm": 348,
           "postal": 1,
           "total": 349,
-          "position": 11,
+          "position": 10,
           "pct": 0.19,
           "alliance": ""
         },
@@ -163,7 +152,7 @@
           "evm": 265,
           "postal": 2,
           "total": 267,
-          "position": 12,
+          "position": 11,
           "pct": 0.14,
           "alliance": ""
         },
@@ -174,7 +163,7 @@
           "evm": 236,
           "postal": 2,
           "total": 238,
-          "position": 13,
+          "position": 12,
           "pct": 0.13,
           "alliance": ""
         },
@@ -185,7 +174,7 @@
           "evm": 216,
           "postal": 0,
           "total": 216,
-          "position": 14,
+          "position": 13,
           "pct": 0.12,
           "alliance": ""
         },
@@ -196,7 +185,7 @@
           "evm": 154,
           "postal": 0,
           "total": 154,
-          "position": 15,
+          "position": 14,
           "pct": 0.08,
           "alliance": ""
         },
@@ -207,7 +196,7 @@
           "evm": 137,
           "postal": 6,
           "total": 143,
-          "position": 16,
+          "position": 15,
           "pct": 0.08,
           "alliance": ""
         },
@@ -218,7 +207,7 @@
           "evm": 111,
           "postal": 1,
           "total": 112,
-          "position": 17,
+          "position": 16,
           "pct": 0.06,
           "alliance": ""
         },
@@ -229,7 +218,7 @@
           "evm": 112,
           "postal": 0,
           "total": 112,
-          "position": 18,
+          "position": 17,
           "pct": 0.06,
           "alliance": ""
         },
@@ -240,7 +229,7 @@
           "evm": 91,
           "postal": 0,
           "total": 91,
-          "position": 19,
+          "position": 18,
           "pct": 0.05,
           "alliance": ""
         },
@@ -251,7 +240,7 @@
           "evm": 86,
           "postal": 0,
           "total": 86,
-          "position": 20,
+          "position": 19,
           "pct": 0.05,
           "alliance": ""
         },
@@ -262,7 +251,7 @@
           "evm": 78,
           "postal": 5,
           "total": 83,
-          "position": 21,
+          "position": 20,
           "pct": 0.04,
           "alliance": ""
         },
@@ -273,7 +262,7 @@
           "evm": 70,
           "postal": 0,
           "total": 70,
-          "position": 22,
+          "position": 21,
           "pct": 0.04,
           "alliance": ""
         },
@@ -284,7 +273,7 @@
           "evm": 66,
           "postal": 1,
           "total": 67,
-          "position": 23,
+          "position": 22,
           "pct": 0.04,
           "alliance": ""
         },
@@ -295,7 +284,7 @@
           "evm": 52,
           "postal": 0,
           "total": 52,
-          "position": 24,
+          "position": 23,
           "pct": 0.03,
           "alliance": ""
         },
@@ -306,7 +295,7 @@
           "evm": 40,
           "postal": 2,
           "total": 42,
-          "position": 25,
+          "position": 24,
           "pct": 0.02,
           "alliance": ""
         },
@@ -317,7 +306,7 @@
           "evm": 39,
           "postal": 0,
           "total": 39,
-          "position": 26,
+          "position": 25,
           "pct": 0.02,
           "alliance": ""
         },
@@ -328,7 +317,7 @@
           "evm": 28,
           "postal": 0,
           "total": 28,
-          "position": 27,
+          "position": 26,
           "pct": 0.02,
           "alliance": ""
         },
@@ -339,8 +328,19 @@
           "evm": 25,
           "postal": 1,
           "total": 26,
-          "position": 28,
+          "position": 27,
           "pct": 0.01,
+          "alliance": ""
+        },
+        {
+          "name": "NOTA",
+          "party": "None of the Above",
+          "party_code": "NOTA",
+          "evm": 652,
+          "postal": 0,
+          "total": 652,
+          "position": null,
+          "pct": 0.35,
           "alliance": ""
         }
       ],
@@ -427,6 +427,27 @@
       "y2021": {
         "total_votes": 185842,
         "turnout_pct": 80.65,
+        "electors": 230430,
+        "votes_by_party": {
+          "TVK": 0,
+          "ADMK": 86646,
+          "DMK": 83076,
+          "BJP": 0,
+          "NTK": 9293,
+          "LEFT": 0,
+          "OTHERS": 5456,
+          "NOTA": 1371
+        },
+        "shares": {
+          "TVK": 0.0,
+          "ADMK": 46.62,
+          "DMK": 44.7,
+          "BJP": 0.0,
+          "NTK": 5.0,
+          "LEFT": 0.0,
+          "OTHERS": 2.94,
+          "NOTA": 0.74
+        },
         "winner": {
           "name": "Maragatham. K",
           "party_code": "ADMK",
@@ -482,6 +503,11 @@
           "april_pct": 30.18,
           "bypoll_pct": 29.15,
           "delta_pp": -1.03
+        },
+        "BJP": {
+          "april_pct": 0.0,
+          "bypoll_pct": 0.0,
+          "delta_pp": 0.0
         },
         "NTK": {
           "april_pct": 2.5,
@@ -557,6 +583,11 @@
           "bypoll": 54008,
           "change": -5830
         },
+        "BJP": {
+          "april": 0,
+          "bypoll": 0,
+          "change": 0
+        },
         "NTK": {
           "april": 4950,
           "bypoll": 2709,
@@ -578,6 +609,359 @@
           "change": -145
         }
       },
+      "timeline": [
+        {
+          "round": 1,
+          "rounds_total": 21,
+          "fetched_ist": "09:55",
+          "leader": "TVK",
+          "lead": 960,
+          "votes": {
+            "TVK": 3571,
+            "ADMK": 2078,
+            "DMK": 2611
+          },
+          "total": 8664
+        },
+        {
+          "round": 2,
+          "rounds_total": 21,
+          "fetched_ist": "10:13",
+          "leader": "TVK",
+          "lead": 1607,
+          "votes": {
+            "TVK": 7615,
+            "ADMK": 4301,
+            "DMK": 6008
+          },
+          "total": 18774
+        },
+        {
+          "round": 3,
+          "rounds_total": 21,
+          "fetched_ist": "10:40",
+          "leader": "TVK",
+          "lead": 3161,
+          "votes": {
+            "TVK": 12075,
+            "ADMK": 6759,
+            "DMK": 8914
+          },
+          "total": 29238
+        },
+        {
+          "round": 4,
+          "rounds_total": 21,
+          "fetched_ist": "11:10",
+          "leader": "TVK",
+          "lead": 4484,
+          "votes": {
+            "TVK": 15725,
+            "ADMK": 9691,
+            "DMK": 11241
+          },
+          "total": 38716
+        },
+        {
+          "round": 5,
+          "rounds_total": 21,
+          "fetched_ist": "11:34",
+          "leader": "TVK",
+          "lead": 6238,
+          "votes": {
+            "TVK": 20067,
+            "ADMK": 11442,
+            "DMK": 13829
+          },
+          "total": 47941
+        },
+        {
+          "round": 6,
+          "rounds_total": 21,
+          "fetched_ist": "11:50",
+          "leader": "TVK",
+          "lead": 8160,
+          "votes": {
+            "TVK": 23884,
+            "ADMK": 14065,
+            "DMK": 15724
+          },
+          "total": 56759
+        },
+        {
+          "round": 7,
+          "rounds_total": 21,
+          "fetched_ist": "12:11",
+          "leader": "TVK",
+          "lead": 8792,
+          "votes": {
+            "TVK": 27460,
+            "ADMK": 16201,
+            "DMK": 18668
+          },
+          "total": 65939
+        },
+        {
+          "round": 8,
+          "rounds_total": 21,
+          "fetched_ist": "13:35",
+          "leader": "TVK",
+          "lead": 10243,
+          "votes": {
+            "TVK": 31061,
+            "ADMK": 17851,
+            "DMK": 20818
+          },
+          "total": 73700
+        },
+        {
+          "round": 9,
+          "rounds_total": 21,
+          "fetched_ist": "13:54",
+          "leader": "TVK",
+          "lead": 11691,
+          "votes": {
+            "TVK": 34894,
+            "ADMK": 19554,
+            "DMK": 23203
+          },
+          "total": 82102
+        },
+        {
+          "round": 10,
+          "rounds_total": 21,
+          "fetched_ist": "14:12",
+          "leader": "TVK",
+          "lead": 12818,
+          "votes": {
+            "TVK": 38200,
+            "ADMK": 21505,
+            "DMK": 25382
+          },
+          "total": 90160
+        },
+        {
+          "round": 11,
+          "rounds_total": 21,
+          "fetched_ist": "14:36",
+          "leader": "TVK",
+          "lead": 13541,
+          "votes": {
+            "TVK": 41304,
+            "ADMK": 23697,
+            "DMK": 27763
+          },
+          "total": 98228
+        },
+        {
+          "round": 12,
+          "rounds_total": 21,
+          "fetched_ist": "14:51",
+          "leader": "TVK",
+          "lead": 14312,
+          "votes": {
+            "TVK": 44402,
+            "ADMK": 26566,
+            "DMK": 30090
+          },
+          "total": 106942
+        },
+        {
+          "round": 13,
+          "rounds_total": 21,
+          "fetched_ist": "15:09",
+          "leader": "TVK",
+          "lead": 14109,
+          "votes": {
+            "TVK": 46895,
+            "ADMK": 28664,
+            "DMK": 32786
+          },
+          "total": 114585
+        },
+        {
+          "round": 14,
+          "rounds_total": 21,
+          "fetched_ist": "15:34",
+          "leader": "TVK",
+          "lead": 14283,
+          "votes": {
+            "TVK": 50206,
+            "ADMK": 31175,
+            "DMK": 35923
+          },
+          "total": 123925
+        },
+        {
+          "round": 15,
+          "rounds_total": 21,
+          "fetched_ist": "15:55",
+          "leader": "TVK",
+          "lead": 15549,
+          "votes": {
+            "TVK": 53979,
+            "ADMK": 33712,
+            "DMK": 38430
+          },
+          "total": 133246
+        },
+        {
+          "round": 16,
+          "rounds_total": 21,
+          "fetched_ist": "16:19",
+          "leader": "TVK",
+          "lead": 16735,
+          "votes": {
+            "TVK": 57994,
+            "ADMK": 35614,
+            "DMK": 41259
+          },
+          "total": 142382
+        },
+        {
+          "round": 17,
+          "rounds_total": 21,
+          "fetched_ist": "16:46",
+          "leader": "TVK",
+          "lead": 17693,
+          "votes": {
+            "TVK": 61337,
+            "ADMK": 38433,
+            "DMK": 43644
+          },
+          "total": 151405
+        },
+        {
+          "round": 18,
+          "rounds_total": 21,
+          "fetched_ist": "17:04",
+          "leader": "TVK",
+          "lead": 18427,
+          "votes": {
+            "TVK": 64578,
+            "ADMK": 40731,
+            "DMK": 46151
+          },
+          "total": 159873
+        },
+        {
+          "round": 19,
+          "rounds_total": 27,
+          "fetched_ist": "17:29",
+          "leader": "TVK",
+          "lead": 18897,
+          "votes": {
+            "TVK": 68072,
+            "ADMK": 42941,
+            "DMK": 49175
+          },
+          "total": 169143
+        },
+        {
+          "round": 20,
+          "rounds_total": 27,
+          "fetched_ist": "17:50",
+          "leader": "TVK",
+          "lead": 19616,
+          "votes": {
+            "TVK": 71001,
+            "ADMK": 45047,
+            "DMK": 51385
+          },
+          "total": 176750
+        },
+        {
+          "round": 21,
+          "rounds_total": 27,
+          "fetched_ist": "17:59",
+          "leader": "TVK",
+          "lead": 20008,
+          "votes": {
+            "TVK": 72354,
+            "ADMK": 45743,
+            "DMK": 52346
+          },
+          "total": 179987
+        },
+        {
+          "round": 22,
+          "rounds_total": 27,
+          "fetched_ist": "18:02",
+          "leader": "TVK",
+          "lead": 20042,
+          "votes": {
+            "TVK": 72622,
+            "ADMK": 46094,
+            "DMK": 52580
+          },
+          "total": 180866
+        },
+        {
+          "round": 23,
+          "rounds_total": 27,
+          "fetched_ist": "18:05",
+          "leader": "TVK",
+          "lead": 20049,
+          "votes": {
+            "TVK": 72847,
+            "ADMK": 46215,
+            "DMK": 52798
+          },
+          "total": 181465
+        },
+        {
+          "round": 24,
+          "rounds_total": 27,
+          "fetched_ist": "18:14",
+          "leader": "TVK",
+          "lead": 20222,
+          "votes": {
+            "TVK": 73152,
+            "ADMK": 46353,
+            "DMK": 52930
+          },
+          "total": 182083
+        },
+        {
+          "round": 25,
+          "rounds_total": 27,
+          "fetched_ist": "18:26",
+          "leader": "TVK",
+          "lead": 20131,
+          "votes": {
+            "TVK": 73594,
+            "ADMK": 46981,
+            "DMK": 53463
+          },
+          "total": 183782
+        },
+        {
+          "round": 26,
+          "rounds_total": 27,
+          "fetched_ist": "18:32",
+          "leader": "TVK",
+          "lead": 20061,
+          "votes": {
+            "TVK": 73801,
+            "ADMK": 47216,
+            "DMK": 53740
+          },
+          "total": 184521
+        },
+        {
+          "round": 27,
+          "rounds_total": 27,
+          "fetched_ist": "18:38",
+          "leader": "TVK",
+          "lead": 20040,
+          "votes": {
+            "TVK": 74048,
+            "ADMK": 47450,
+            "DMK": 54008
+          },
+          "total": 185292
+        }
+      ],
       "namesakes": [],
       "namesake_votes": 0,
       "namesakes_of_runner_up_votes": 0,
@@ -666,24 +1050,13 @@
           "alliance": "Left"
         },
         {
-          "name": "NOTA",
-          "party": "None of the Above",
-          "party_code": "NOTA",
-          "evm": 674,
-          "postal": 3,
-          "total": 677,
-          "position": 6,
-          "pct": 0.38,
-          "alliance": ""
-        },
-        {
           "name": "RAJARATHINAM.S",
           "party": "Independent",
           "party_code": "IND",
           "evm": 654,
           "postal": 1,
           "total": 655,
-          "position": 7,
+          "position": 6,
           "pct": 0.36,
           "alliance": ""
         },
@@ -694,7 +1067,7 @@
           "evm": 473,
           "postal": 0,
           "total": 473,
-          "position": 8,
+          "position": 7,
           "pct": 0.26,
           "alliance": ""
         },
@@ -705,7 +1078,7 @@
           "evm": 436,
           "postal": 1,
           "total": 437,
-          "position": 9,
+          "position": 8,
           "pct": 0.24,
           "alliance": ""
         },
@@ -716,7 +1089,7 @@
           "evm": 325,
           "postal": 0,
           "total": 325,
-          "position": 10,
+          "position": 9,
           "pct": 0.18,
           "alliance": ""
         },
@@ -727,7 +1100,7 @@
           "evm": 269,
           "postal": 4,
           "total": 273,
-          "position": 11,
+          "position": 10,
           "pct": 0.15,
           "alliance": ""
         },
@@ -738,7 +1111,7 @@
           "evm": 253,
           "postal": 0,
           "total": 253,
-          "position": 12,
+          "position": 11,
           "pct": 0.14,
           "alliance": ""
         },
@@ -749,7 +1122,7 @@
           "evm": 250,
           "postal": 0,
           "total": 250,
-          "position": 13,
+          "position": 12,
           "pct": 0.14,
           "alliance": ""
         },
@@ -760,7 +1133,7 @@
           "evm": 224,
           "postal": 0,
           "total": 224,
-          "position": 14,
+          "position": 13,
           "pct": 0.12,
           "alliance": ""
         },
@@ -771,7 +1144,7 @@
           "evm": 195,
           "postal": 0,
           "total": 195,
-          "position": 15,
+          "position": 14,
           "pct": 0.11,
           "alliance": ""
         },
@@ -782,7 +1155,7 @@
           "evm": 152,
           "postal": 2,
           "total": 154,
-          "position": 16,
+          "position": 15,
           "pct": 0.09,
           "alliance": ""
         },
@@ -793,7 +1166,7 @@
           "evm": 130,
           "postal": 3,
           "total": 133,
-          "position": 17,
+          "position": 16,
           "pct": 0.07,
           "alliance": ""
         },
@@ -804,7 +1177,7 @@
           "evm": 124,
           "postal": 0,
           "total": 124,
-          "position": 18,
+          "position": 17,
           "pct": 0.07,
           "alliance": ""
         },
@@ -815,7 +1188,7 @@
           "evm": 117,
           "postal": 0,
           "total": 117,
-          "position": 19,
+          "position": 18,
           "pct": 0.06,
           "alliance": ""
         },
@@ -826,7 +1199,7 @@
           "evm": 100,
           "postal": 2,
           "total": 102,
-          "position": 20,
+          "position": 19,
           "pct": 0.06,
           "alliance": ""
         },
@@ -837,7 +1210,7 @@
           "evm": 91,
           "postal": 0,
           "total": 91,
-          "position": 21,
+          "position": 20,
           "pct": 0.05,
           "alliance": ""
         },
@@ -848,7 +1221,7 @@
           "evm": 77,
           "postal": 0,
           "total": 77,
-          "position": 22,
+          "position": 21,
           "pct": 0.04,
           "alliance": ""
         },
@@ -859,8 +1232,19 @@
           "evm": 56,
           "postal": 0,
           "total": 56,
-          "position": 23,
+          "position": 22,
           "pct": 0.03,
+          "alliance": ""
+        },
+        {
+          "name": "NOTA",
+          "party": "None of the Above",
+          "party_code": "NOTA",
+          "evm": 674,
+          "postal": 3,
+          "total": 677,
+          "position": null,
+          "pct": 0.38,
           "alliance": ""
         }
       ],
@@ -947,6 +1331,27 @@
       "y2021": {
         "total_votes": 193991,
         "turnout_pct": 74.15,
+        "electors": 261619,
+        "votes_by_party": {
+          "TVK": 0,
+          "ADMK": 0,
+          "DMK": 89986,
+          "BJP": 88593,
+          "NTK": 6753,
+          "LEFT": 0,
+          "OTHERS": 6756,
+          "NOTA": 1903
+        },
+        "shares": {
+          "TVK": 0.0,
+          "ADMK": 0.0,
+          "DMK": 46.39,
+          "BJP": 45.67,
+          "NTK": 3.48,
+          "LEFT": 0.0,
+          "OTHERS": 3.48,
+          "NOTA": 0.98
+        },
         "winner": {
           "name": "KAYALVIZHI N",
           "party_code": "DMK",
@@ -1002,6 +1407,11 @@
           "april_pct": 32.2,
           "bypoll_pct": 31.78,
           "delta_pp": -0.42
+        },
+        "BJP": {
+          "april_pct": 0.0,
+          "bypoll_pct": 0.0,
+          "delta_pp": 0.0
         },
         "NTK": {
           "april_pct": 3.01,
@@ -1077,6 +1487,11 @@
           "bypoll": 57370,
           "change": -7003
         },
+        "BJP": {
+          "april": 0,
+          "bypoll": 0,
+          "change": 0
+        },
         "NTK": {
           "april": 6026,
           "bypoll": 5268,
@@ -1098,6 +1513,307 @@
           "change": -381
         }
       },
+      "timeline": [
+        {
+          "round": 1,
+          "rounds_total": 23,
+          "fetched_ist": "09:33",
+          "leader": "ADMK",
+          "lead": 5,
+          "votes": {
+            "TVK": 2634,
+            "ADMK": 2639,
+            "DMK": 2019
+          },
+          "total": 7726
+        },
+        {
+          "round": 2,
+          "rounds_total": 23,
+          "fetched_ist": "09:55",
+          "leader": "ADMK",
+          "lead": 592,
+          "votes": {
+            "TVK": 4981,
+            "ADMK": 5573,
+            "DMK": 4016
+          },
+          "total": 15442
+        },
+        {
+          "round": 3,
+          "rounds_total": 23,
+          "fetched_ist": "10:10",
+          "leader": "ADMK",
+          "lead": 810,
+          "votes": {
+            "TVK": 7434,
+            "ADMK": 8244,
+            "DMK": 6158
+          },
+          "total": 23110
+        },
+        {
+          "round": 4,
+          "rounds_total": 23,
+          "fetched_ist": "10:25",
+          "leader": "ADMK",
+          "lead": 958,
+          "votes": {
+            "TVK": 9815,
+            "ADMK": 10773,
+            "DMK": 8906
+          },
+          "total": 31228
+        },
+        {
+          "round": 5,
+          "rounds_total": 23,
+          "fetched_ist": "10:40",
+          "leader": "TVK",
+          "lead": 724,
+          "votes": {
+            "TVK": 13213,
+            "ADMK": 12489,
+            "DMK": 11554
+          },
+          "total": 39558
+        },
+        {
+          "round": 6,
+          "rounds_total": 23,
+          "fetched_ist": "10:52",
+          "leader": "TVK",
+          "lead": 1394,
+          "votes": {
+            "TVK": 16201,
+            "ADMK": 14807,
+            "DMK": 13797
+          },
+          "total": 47643
+        },
+        {
+          "round": 7,
+          "rounds_total": 23,
+          "fetched_ist": "11:13",
+          "leader": "TVK",
+          "lead": 917,
+          "votes": {
+            "TVK": 18690,
+            "ADMK": 17773,
+            "DMK": 15988
+          },
+          "total": 55767
+        },
+        {
+          "round": 8,
+          "rounds_total": 23,
+          "fetched_ist": "11:22",
+          "leader": "TVK",
+          "lead": 1304,
+          "votes": {
+            "TVK": 21034,
+            "ADMK": 19730,
+            "DMK": 17898
+          },
+          "total": 62492
+        },
+        {
+          "round": 9,
+          "rounds_total": 23,
+          "fetched_ist": "11:31",
+          "leader": "TVK",
+          "lead": 2112,
+          "votes": {
+            "TVK": 24047,
+            "ADMK": 21935,
+            "DMK": 19972
+          },
+          "total": 70277
+        },
+        {
+          "round": 10,
+          "rounds_total": 23,
+          "fetched_ist": "11:44",
+          "leader": "TVK",
+          "lead": 4128,
+          "votes": {
+            "TVK": 27649,
+            "ADMK": 23521,
+            "DMK": 22503
+          },
+          "total": 78500
+        },
+        {
+          "round": 11,
+          "rounds_total": 23,
+          "fetched_ist": "12:08",
+          "leader": "TVK",
+          "lead": 5486,
+          "votes": {
+            "TVK": 31327,
+            "ADMK": 24363,
+            "DMK": 25841
+          },
+          "total": 86944
+        },
+        {
+          "round": 12,
+          "rounds_total": 23,
+          "fetched_ist": "12:26",
+          "leader": "TVK",
+          "lead": 6420,
+          "votes": {
+            "TVK": 34987,
+            "ADMK": 25307,
+            "DMK": 28567
+          },
+          "total": 94875
+        },
+        {
+          "round": 13,
+          "rounds_total": 23,
+          "fetched_ist": "12:44",
+          "leader": "TVK",
+          "lead": 6901,
+          "votes": {
+            "TVK": 37944,
+            "ADMK": 26266,
+            "DMK": 31043
+          },
+          "total": 101647
+        },
+        {
+          "round": 14,
+          "rounds_total": 23,
+          "fetched_ist": "12:53",
+          "leader": "TVK",
+          "lead": 8064,
+          "votes": {
+            "TVK": 41327,
+            "ADMK": 27561,
+            "DMK": 33263
+          },
+          "total": 108986
+        },
+        {
+          "round": 15,
+          "rounds_total": 23,
+          "fetched_ist": "13:11",
+          "leader": "TVK",
+          "lead": 9226,
+          "votes": {
+            "TVK": 45336,
+            "ADMK": 29348,
+            "DMK": 36110
+          },
+          "total": 118247
+        },
+        {
+          "round": 16,
+          "rounds_total": 23,
+          "fetched_ist": "13:23",
+          "leader": "TVK",
+          "lead": 9636,
+          "votes": {
+            "TVK": 48675,
+            "ADMK": 31067,
+            "DMK": 39039
+          },
+          "total": 126780
+        },
+        {
+          "round": 17,
+          "rounds_total": 23,
+          "fetched_ist": "13:45",
+          "leader": "TVK",
+          "lead": 8863,
+          "votes": {
+            "TVK": 51253,
+            "ADMK": 32892,
+            "DMK": 42390
+          },
+          "total": 135121
+        },
+        {
+          "round": 18,
+          "rounds_total": 23,
+          "fetched_ist": "14:39",
+          "leader": "TVK",
+          "lead": 9011,
+          "votes": {
+            "TVK": 54099,
+            "ADMK": 35005,
+            "DMK": 45088
+          },
+          "total": 143356
+        },
+        {
+          "round": 19,
+          "rounds_total": 23,
+          "fetched_ist": "14:51",
+          "leader": "TVK",
+          "lead": 9350,
+          "votes": {
+            "TVK": 56903,
+            "ADMK": 37040,
+            "DMK": 47553
+          },
+          "total": 151053
+        },
+        {
+          "round": 20,
+          "rounds_total": 23,
+          "fetched_ist": "15:03",
+          "leader": "TVK",
+          "lead": 10003,
+          "votes": {
+            "TVK": 60078,
+            "ADMK": 38760,
+            "DMK": 50075
+          },
+          "total": 158834
+        },
+        {
+          "round": 21,
+          "rounds_total": 23,
+          "fetched_ist": "15:34",
+          "leader": "TVK",
+          "lead": 9838,
+          "votes": {
+            "TVK": 62851,
+            "ADMK": 41484,
+            "DMK": 53013
+          },
+          "total": 167673
+        },
+        {
+          "round": 22,
+          "rounds_total": 23,
+          "fetched_ist": "15:43",
+          "leader": "TVK",
+          "lead": 10228,
+          "votes": {
+            "TVK": 65341,
+            "ADMK": 43594,
+            "DMK": 55113
+          },
+          "total": 174831
+        },
+        {
+          "round": 23,
+          "rounds_total": 23,
+          "fetched_ist": "16:01",
+          "leader": "TVK",
+          "lead": 9471,
+          "votes": {
+            "TVK": 66841,
+            "ADMK": 45280,
+            "DMK": 57370
+          },
+          "total": 180532
+        }
+      ],
       "namesakes": [
         {
           "name": "BANUMATHI.C",
@@ -1120,5 +1836,63 @@
       "namesakes_of_runner_up_votes": 0,
       "namesakes_exceed_margin": false
     }
-  ]
+  ],
+  "vacancies": [
+    {
+      "ac_no": 103,
+      "status": "Election petition pending",
+      "vacated": null,
+      "ac_name": "Perundurai",
+      "april_winner": "JAYAKUMAR. S",
+      "april_party": "ADMK",
+      "april_runner_up_party": "DMK",
+      "april_margin": 9693,
+      "april_margin_pct": 4.83
+    },
+    {
+      "ac_no": 135,
+      "status": "Vacant, no poll date",
+      "vacated": "2026-06-29",
+      "ac_name": "Karur",
+      "april_winner": "M.R. VIJAYABHASKAR",
+      "april_party": "ADMK",
+      "april_runner_up_party": "TVK",
+      "april_margin": 1821,
+      "april_margin_pct": 0.84
+    },
+    {
+      "ac_no": 141,
+      "status": "Vacant, no poll date (C. Joseph Vijay kept Perambur)",
+      "vacated": "2026-05-10",
+      "ac_name": "Tiruchirappalli (East)",
+      "april_winner": "C. JOSEPH VIJAY",
+      "april_party": "TVK",
+      "april_runner_up_party": "DMK",
+      "april_margin": 27416,
+      "april_margin_pct": 15.02
+    },
+    {
+      "ac_no": 179,
+      "status": "Vacant, no poll date",
+      "vacated": "2026-06-16",
+      "ac_name": "Viralimalai",
+      "april_winner": "VIJAYABASKAR. C",
+      "april_party": "ADMK",
+      "april_runner_up_party": "TVK",
+      "april_margin": 62073,
+      "april_margin_pct": 30.44
+    },
+    {
+      "ac_no": 225,
+      "status": "Vacant, no poll date",
+      "vacated": "2026-05-26",
+      "ac_name": "Ambasamudram",
+      "april_winner": "DR.ESAKKI SUBAYA",
+      "april_party": "ADMK",
+      "april_runner_up_party": "INC",
+      "april_margin": 10245,
+      "april_margin_pct": 5.36
+    }
+  ],
+  "vacancies_source": "Wikipedia, 2026-2031 Tamil Nadu Legislative Assembly By-Polls (read 8 Oct 2026); April results from the ECI tally"
 }
