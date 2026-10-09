@@ -11,7 +11,9 @@ Two CSVs covering the April 2026 Tamil Nadu Legislative Assembly election: every
 | [`dashboard/data/candidates-2026.csv`](dashboard/data/candidates-2026.csv) | 4,023 | Every contesting candidate, matched to ECI's official count. Party, alliance, age, education, declared assets, liabilities. |
 | [`dashboard/data/dummy-pairs-2026.csv`](dashboard/data/dummy-pairs-2026.csv) | 329 | Suspect namesake pairs — major-alliance candidates whose names overlap with another (usually independent) candidate in the same constituency. |
 
-Schema documentation, sources, methodology, and known caveats are in **[`dashboard/data/README.md`](dashboard/data/README.md)**.
+Schema documentation, sources, methodology, known caveats and corrections are in **[`dashboard/data/README.md`](dashboard/data/README.md)**.
+
+**v1.2 (9 October 2026):** alliance labels corrected. DMDK is in the DMK-led `INDIA` bloc and AMMK in the `NDA`; AIADMK and CPI(M) rows, previously blank, are now labelled. Details in the data README's Corrections section.
 
 ## Web pages
 

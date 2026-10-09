@@ -26,7 +26,7 @@ These two are intentionally bundled because the second only makes sense in the c
 | `candidate_name` | text | As filed with the returning officer |
 | `party_name` | text | Full registered party name |
 | `party_code` | text | Short code, e.g. `DMK`, `AIADMK`, `IND` |
-| `alliance` | text | `INDIA`, `NDA`, `TVK`, `NTK`, etc., where applicable |
+| `alliance` | text | `INDIA` (DMK-led: DMK, INC, DMDK, VCK, CPI, CPI(M), IUML), `NDA` (AIADMK, BJP, PMK, AMMK), `TVK`, `NTK`. Each of `INDIA` and `NDA` covers exactly 234 candidates, one per seat. Parties outside these four are labelled `NONE`, `OTHERS` or left blank; treat all three as "no alliance". See Corrections. |
 | `gender` | char(1) | `M`, `F`, or `O` |
 | `age` | int | At time of nomination |
 | `education` | text | Highest qualification declared in Form 26 |
@@ -52,7 +52,7 @@ These two are intentionally bundled because the second only makes sense in the c
 | 5 | AIADMK | 172 | Alliance leader |
 | 6 | TAVK | 164 | Tamizhaga Vaazhvurimai Katchi |
 | 7 | BSP | 119 | Bahujan Samaj Party |
-| 8 | AIPTMMK | 78 | Vijayakanth's party |
+| 8 | AIPTMMK | 78 | All India Puratchi Thalaivar Makkal Munnettra Kazhagam |
 | 9 | PT | 60 | Puthiya Tamilagam |
 | 10 | NIP | 33 | Naam Indiar Party |
 | 11 | BJP | 33 | NDA ally |
@@ -93,6 +93,19 @@ These two are intentionally bundled because the second only makes sense in the c
 **Category breakdown:** 202 `WORD_MATCH`, 77 `EXACT`, 50 `NEAR_FULL`.
 
 ---
+
+## Corrections
+
+**v1.2, 9 October 2026: alliance labels.** The `alliance` column (and `major_alliance` in `dummy-pairs-2026.csv`) had four errors, now fixed. No other column changed.
+
+| Party | Rows | Was | Now | Why |
+|---|---:|---|---|---|
+| DMDK | 10 | `NDA` | `INDIA` | DMDK joined the DMK-led alliance in February 2026 |
+| AMMK | 11 | `OTHERS` | `NDA` | AMMK rejoined the NDA in January 2026 and contested 11 seats under the March seat pact |
+| AIADMK | 172 | blank | `NDA` | Party-code mismatch in the build script |
+| CPI(M) | 5 | blank | `INDIA` | Party-code mismatch in the build script |
+
+In `dummy-pairs-2026.csv`, the 5 pairs targeting DMDK candidates move from `NDA` to `INDIA`. Alliance seat totals for 2026 are TVK 108, INDIA 73, NDA 53. Also corrected in this README: the party table described AIPTMMK as Vijayakanth's party. Vijayakanth founded the DMDK.
 
 ## Sources
 
