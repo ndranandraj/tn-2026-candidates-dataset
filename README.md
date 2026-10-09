@@ -13,7 +13,7 @@ Two CSVs covering the April 2026 Tamil Nadu Legislative Assembly election: every
 
 Schema documentation, sources, methodology, known caveats and corrections are in **[`dashboard/data/README.md`](dashboard/data/README.md)**.
 
-**v1.2 (9 October 2026):** alliance labels corrected. DMDK is in the DMK-led `INDIA` bloc and AMMK in the `NDA`; AIADMK and CPI(M) rows, previously blank, are now labelled. Details in the data README's Corrections section.
+**v1.2 (9 October 2026):** alliance labels corrected. DMDK is in the DMK-led `INDIA` bloc and AMMK in the `NDA`; AIADMK and CPI(M) rows, previously blank, are now labelled; every candidate outside the four blocs is `NONE`. Details in the data README's Corrections section.
 
 ## Web pages
 

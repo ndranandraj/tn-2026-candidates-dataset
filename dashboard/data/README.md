@@ -26,7 +26,7 @@ These two are intentionally bundled because the second only makes sense in the c
 | `candidate_name` | text | As filed with the returning officer |
 | `party_name` | text | Full registered party name |
 | `party_code` | text | Short code, e.g. `DMK`, `AIADMK`, `IND` |
-| `alliance` | text | `INDIA` (DMK-led: DMK, INC, DMDK, VCK, CPI, CPI(M), IUML), `NDA` (AIADMK, BJP, PMK, AMMK), `TVK`, `NTK`. Each of `INDIA` and `NDA` covers exactly 234 candidates, one per seat. Parties outside these four are labelled `NONE`, `OTHERS` or left blank; treat all three as "no alliance". See Corrections. |
+| `alliance` | text | `INDIA` (DMK-led: DMK, INC, DMDK, VCK, CPI, CPI(M), IUML), `NDA` (AIADMK, BJP, PMK, AMMK), `TVK`, `NTK`. Each of `INDIA` and `NDA` covers exactly 234 candidates, one per seat. Every other candidate, independents included, is `NONE`. See Corrections. |
 | `gender` | char(1) | `M`, `F`, or `O` |
 | `age` | int | At time of nomination |
 | `education` | text | Highest qualification declared in Form 26 |
@@ -104,6 +104,8 @@ These two are intentionally bundled because the second only makes sense in the c
 | AMMK | 11 | `OTHERS` | `NDA` | AMMK rejoined the NDA in January 2026 and contested 11 seats under the March seat pact |
 | AIADMK | 172 | blank | `NDA` | Party-code mismatch in the build script |
 | CPI(M) | 5 | blank | `INDIA` | Party-code mismatch in the build script |
+
+Candidates outside the four blocs had three different labels (`NONE` for independents, `OTHERS` for 445 party candidates, blank for 435 more). All 3,088 now read `NONE`.
 
 In `dummy-pairs-2026.csv`, the 5 pairs targeting DMDK candidates move from `NDA` to `INDIA`. Alliance seat totals for 2026 are TVK 108, INDIA 73, NDA 53. Also corrected in this README: the party table described AIPTMMK as Vijayakanth's party. Vijayakanth founded the DMDK.
 
